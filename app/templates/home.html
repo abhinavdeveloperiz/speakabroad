@@ -1,0 +1,705 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="relative h-[60vh] md:h-[74vh] flex items-center justify-center text-center text-white">
+
+    <img src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE="
+        class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-4xl px-6">
+
+
+
+
+        <h1 data-aos="zoom-in" class="text-3xl md:text-4xl font-bold mb-6 uppercase shine-text">
+
+            One Vision. Unlimited Destinations.
+
+        </h1>
+
+
+        <style>
+            .shine-text {
+                background: linear-gradient(110deg,
+                        #ffffff 40%,
+                        #ec4899 50%,
+                        #ffffff 60%);
+                background-size: 200% auto;
+
+                color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+
+                animation: textShine 3s linear infinite;
+            }
+
+            @keyframes textShine {
+                0% {
+                    background-position: -200% center;
+                }
+
+                100% {
+                    background-position: 200% center;
+                }
+            }
+        </style>
+
+
+
+
+        <p data-aos="zoom-in" data-aos-delay="200" class="text-sm md:text-md text-gray-200 mb-8">
+
+            Your Language. Your Journey. Study anywhere in the world with expert guidance.
+
+        </p>
+
+        <a href="{% url 'Study_in_abroad' %}" data-aos="fade-up" data-aos-delay="300"
+            class="bg-primary hover:bg-secondary transition px-8 py-2 rounded-xl text-lg">
+
+            Explore
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<section class="py-6 bg-primary text-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-4 grid-cols-2 gap-10 text-center">
+
+            <!-- Students Placed -->
+
+            <div>
+
+                <i class="fa-solid fa-user-graduate text-4xl mb-4"></i>
+
+                <h2 class="text-2xl font-bold counter" data-target="1500">0</h2>
+
+                <p class="mt-2 text-blue-100">Students Placed</p>
+
+            </div>
+
+
+            <!-- Universities -->
+
+            <div>
+
+                <i class="fa-solid fa-school text-4xl mb-4"></i>
+
+                <h2 class="text-2xl font-bold counter" data-target="120">0</h2>
+
+                <p class="mt-2 text-blue-100">Partner Universities</p>
+
+            </div>
+
+
+            <!-- Countries -->
+
+            <div>
+
+                <i class="fa-solid fa-globe text-4xl mb-4"></i>
+
+                <h2 class="text-2xl font-bold counter" data-target="25">0</h2>
+
+                <p class="mt-2 text-blue-100">Countries</p>
+
+            </div>
+
+
+            <!-- Success Rate -->
+
+            <div>
+
+                <i class="fa-solid fa-award text-4xl mb-4"></i>
+
+                <h2 class="text-2xl font-bold counter" data-target="98">0</h2>
+
+                <p class="mt-2 text-blue-100">Visa Success %</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    const counters = document.querySelectorAll('.counter');
+
+    const speed = 200;
+
+    const startCounter = (counter) => {
+
+        const target = +counter.getAttribute('data-target');
+
+        let count = 0;
+
+        const updateCount = () => {
+
+            const increment = target / speed;
+
+            if (count < target) {
+
+                count += increment;
+
+                counter.innerText = Math.ceil(count);
+
+                setTimeout(updateCount, 10);
+
+            } else {
+
+                counter.innerText = target + "+";
+
+            }
+
+        }
+
+        updateCount();
+
+    }
+
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                startCounter(entry.target);
+
+                observer.unobserve(entry.target);
+
+            }
+
+        })
+
+    }, { threshold: 0.5 });
+
+
+    counters.forEach(counter => {
+
+        observer.observe(counter);
+
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+{% load static %}
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-4xl font-semibold text-center text-primary mb-12 uppercase" data-aos="fade-up">
+            Explore Study Opportunities
+        </h2>
+
+
+        <div class="grid md:grid-cols-2 gap-10">
+
+            <!-- Study in India -->
+
+            <a href="{% url 'Study_in_india' %}" data-aos="flip-right"
+                class="relative group h-[460px] rounded-xl overflow-hidden shadow-lg">
+
+                <img src="https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk="
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                <div class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition"></div>
+
+                <div class="relative h-full flex flex-col justify-end p-8 text-white">
+
+                    <h3 class="text-3xl font-semibold mb-2 uppercase">
+                        Study in India
+                    </h3>
+
+                    <p class="text-sm text-gray-200 mb-4">
+                        Discover world-class universities, affordable education,
+                        and a vibrant cultural experience in India.
+                    </p>
+
+
+
+                </div>
+
+            </a>
+
+
+
+            <!-- Study Abroad -->
+
+            <a href="{% url 'Study_in_abroad' %}" data-aos="flip-left"
+                class="relative group h-[460px] rounded-xl overflow-hidden shadow-lg">
+
+                <img src="https://hips.hearstapps.com/hmg-prod/images/paris-skyline-with-eiffel-tower-on-a-sunny-day-wide-royalty-free-image-1722542465.jpg"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                <div class="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition"></div>
+
+                <div class="relative h-full flex flex-col justify-end p-8 text-white">
+
+                    <h3 class="text-3xl font-semibold mb-2 uppercase">
+                        Study Abroad
+                    </h3>
+
+                    <p class="text-sm text-gray-200 mb-4">
+                        Explore international universities and build
+                        a successful global career through quality education.
+                    </p>
+
+
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+
+        <!-- Image Section -->
+
+        <div class="relative" data-aos="fade-right">
+
+            <img src="https://media.istockphoto.com/id/1783743772/photo/female-speaker-giving-a-presentation-during-business-seminar-at-convention-center.jpg?s=612x612&w=0&k=20&c=T0Sit9sSbrafPXlY0vjadvEf-dyI8-t4uTY5W1TFzWU="
+                class="rounded-xl shadow-xl w-full">
+
+            <!-- small floating image -->
+
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20240615/pngtree-mastering-the-art-of-public-speaking-image_15877638.jpg"
+                class="absolute -bottom-8 -right-8 w-40 rounded-lg shadow-lg border-4 border-white hidden md:block">
+
+        </div>
+
+
+        <!-- Content Section -->
+
+        <div data-aos="fade-left">
+
+            <h2 class="text-4xl font-bold text-primary mb-6">
+
+                About SpeakAbroad
+
+            </h2>
+
+            <p class="text-gray-600 leading-relaxed mb-6 text-justify">
+
+                SpeakAbroad is a trusted education consultancy dedicated to helping students
+                turn their dreams of international education into reality. Since 2014,
+                we have supported aspiring learners at every stage of their journey —
+                from selecting the right course and university to exam preparation,
+                documentation guidance, and visa assistance.
+
+            </p>
+
+            <p class="text-gray-600 leading-relaxed mb-6 text-justify">
+
+                Our goal is to help each student achieve their global academic ambitions
+                through expert counselling, personalized support, and a seamless admission
+                process. At SpeakAbroad, we inspire students to pursue their aspirations
+                with clarity, confidence, and determination.
+
+            </p>
+
+            <p class="text-gray-600 leading-relaxed mb-8 text-justify">
+
+                We understand that studying abroad is more than an academic decision —
+                it is a life-changing experience. That’s why we focus on careful planning,
+                informed choices, and honest guidance tailored to your strengths and interests.
+
+            </p>
+
+
+            <!-- Features -->
+
+            <div class="grid grid-cols-2 gap-6 mb-8">
+
+                <div class="flex items-start gap-3">
+
+                    <i class="fa-solid fa-graduation-cap text-primary text-xl"></i>
+
+                    <span class="text-gray-700 font-medium">
+                        Expert Counselling
+                    </span>
+
+                </div>
+
+
+                <div class="flex items-start gap-3">
+
+                    <i class="fa-solid fa-globe text-primary text-xl"></i>
+
+                    <span class="text-gray-700 font-medium">
+                        Global University Network
+                    </span>
+
+                </div>
+
+
+                <div class="flex items-start gap-3">
+
+                    <i class="fa-solid fa-file text-primary text-xl"></i>
+
+                    <span class="text-gray-700 font-medium">
+                        Documentation Support
+                    </span>
+
+                </div>
+
+
+                <div class="flex items-start gap-3">
+
+                    <i class="fa-solid fa-passport text-primary text-xl"></i>
+
+                    <span class="text-gray-700 font-medium">
+                        Visa Assistance
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <a href="{% url 'about' %}"
+                class="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition">
+
+                Learn More About Us
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="py-20 bg-dark">
+
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-bold text-light mb-4" data-aos="fade-up">
+            Our Services
+        </h2>
+
+        <p class="text-light max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
+            SpeakAbroad offers expert language training and professional guidance to help students successfully pursue
+            their study abroad goals.
+        </p>
+
+
+        <div class="grid md:grid-cols-3 grid-cols-2 gap-10">
+
+            <!-- IELTS -->
+
+            <div class="p-8" data-aos="fade-up">
+
+                <i class="fa-solid fa-language text-light text-4xl mb-4"></i>
+
+                <h3 class="font-semibold text-light text-lg mb-2">
+                    IELTS Training
+                </h3>
+
+            </div>
+
+
+            <!-- OET -->
+
+            <div class="p-8" data-aos="fade-up" data-aos-delay="100">
+
+                <i class="fa-solid fa-user-doctor text-light text-4xl mb-4"></i>
+
+                <h3 class="font-semibold text-light text-lg mb-2">
+                    OET Coaching
+                </h3>
+
+            </div>
+
+
+            <!-- PTE -->
+
+            <div class="p-8" data-aos="fade-up" data-aos-delay="200">
+
+                <i class="fa-solid fa-laptop text-light text-4xl mb-4"></i>
+
+                <h3 class="font-semibold text-light text-lg mb-2">
+                    PTE Preparation
+                </h3>
+
+            </div>
+
+
+            <!-- Spoken English -->
+
+            <div class="p-8" data-aos="fade-up" data-aos-delay="300">
+
+                <i class="fa-solid fa-comments text-light text-4xl mb-4"></i>
+
+                <h3 class="font-semibold text-light text-lg mb-2">
+                    Spoken English
+                </h3>
+
+            </div>
+
+
+            <!-- Study Abroad Consulting -->
+
+            <div class="p-8" data-aos="fade-up" data-aos-delay="400">
+
+                <i class="fa-solid fa-globe text-light text-4xl mb-4"></i>
+
+                <h3 class="font-semibold text-light text-lg mb-2">
+                    Study Abroad Consulting
+                </h3>
+
+            </div>
+
+
+            <!-- Visa Assistance -->
+
+            <div class="p-8" data-aos="fade-up" data-aos-delay="500">
+
+                <i class="fa-solid fa-passport text-light text-4xl mb-4"></i>
+
+                <h3 class="font-semibold text-light text-lg mb-2">
+                    Visa Assistance
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- TWO PARTITION SECTION -->
+
+<section class="py-20 bg-light">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+
+        <!-- STUDY IN INDIA -->
+
+        <div data-aos="fade-right">
+
+            <img src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE="
+                class="rounded-xl shadow-lg">
+
+        </div>
+
+
+        <div data-aos="fade-left">
+
+            <h2 class="text-3xl font-bold text-primary mb-4">
+
+                Study in India
+
+            </h2>
+
+            <p class="text-xl font-semibold mb-6">
+
+                “One vision. Unlimited destinations. Infinite opportunities”
+
+            </p>
+
+            <p class="text-gray-600 leading-relaxed text-justify">
+
+                Step into a future shaped by excellence. Gain access to world-class education,
+                experience a vibrant and diverse culture, and explore limitless academic and
+                career opportunities in one of the world's fastest-growing economies.
+
+                Your global journey starts here.
+
+            </p>
+
+            <a href="{% url 'Study_in_india' %}"
+                class="inline-block mt-6 bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition">
+
+                Explore India
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- STUDY ABROAD PARTITION -->
+
+<section class="py-20">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+
+        <div data-aos="fade-right">
+
+            <h2 class="text-3xl font-bold text-primary mb-4">
+
+                Study Abroad
+
+            </h2>
+
+            <p class="text-xl font-semibold mb-6">
+
+                “Let your ambitions rise beyond boundaries and transform into global success.”
+
+            </p>
+
+            <p class="text-gray-600 leading-relaxed text-justify">
+
+                Expand your horizons with an international education designed to shape global
+                leaders. Discover new cultures, gain globally respected qualifications,
+                and build a career without boundaries.
+
+                Experience innovative teaching, advanced research opportunities,
+                and a truly international network that prepares you for success anywhere in the world.
+
+                Start your global chapter today.
+
+            </p>
+
+            <a href="{% url 'Study_in_abroad' %}"
+                class="inline-block mt-6 bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition">
+
+                Explore Abroad
+
+            </a>
+
+        </div>
+
+
+        <div data-aos="fade-left">
+
+            <img src="https://media.istockphoto.com/id/1430153563/photo/big-ben-with-bridge-over-thames-and-flag-of-england-against-blue-sky-in-london-england-uk.jpg?s=612x612&w=0&k=20&c=ytP9xfJV7h8Mc4oBADkLj6whBTZOrWA9Krc-7VRR6Dw="
+                class="rounded-xl shadow-lg">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<section class="h-[50vh] bg-fixed bg-center bg-cover relative"
+    style="background-image:url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad');">
+
+
+    <!-- dark overlay -->
+
+    <div class="absolute inset-0 bg-black/10"></div>
+
+
+</section>
+
+
+
+<!-- CALL TO ACTION -->
+
+<section class="bg-primary py-20 text-center text-white">
+
+    <div class="max-w-4xl mx-auto px-6" data-aos="zoom-in">
+
+        <h2 class="text-2xl font-bold mb-6">
+
+            Start Your Global Education Journey Today
+
+        </h2>
+
+        <p class="text-sm text-blue-100 mb-8">
+
+            Speakabroad helps students discover universities, prepare language tests,
+            and secure admission across the world.
+
+        </p>
+
+        <a href="#" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+
+            Get Free Consultation
+
+        </a>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

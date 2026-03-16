@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="relative h-[45vh] flex items-center justify-center text-center text-white">
+
+    ```
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10">
+
+        <h1 class="text-4xl md:text-5xl font-bold uppercase">
+            FAQ
+        </h1>
+
+        <p class="text-gray-200 mt-4">
+            <a href="/" class="text-white">Home</a>
+            <span> > FAQ</span>
+        </p>
+
+    </div>
+    ```
+
+</section>
+
+<!-- FAQ SECTION -->
+
+<section class="py-24 bg-gray-50">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center text-primary mb-14">
+            Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-6">
+
+            <!-- FAQ 1 -->
+
+            <div class="faq-item bg-white rounded-xl shadow">
+
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
+
+                    <span>What services does SpeakAbroad provide?</span>
+
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                </button>
+
+                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
+
+                    SpeakAbroad provides complete guidance for students planning to study abroad including university
+                    selection,
+                    language test preparation, documentation support, and visa assistance.
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 2 -->
+
+            <div class="faq-item bg-white rounded-xl shadow">
+
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
+
+                    <span>Which countries can I study in through SpeakAbroad?</span>
+
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                </button>
+
+                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
+
+                    We assist students in applying to universities in countries such as Austria, Georgia, Netherlands,
+                    Denmark, Italy, and several other international destinations.
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 3 -->
+
+            <div class="faq-item bg-white rounded-xl shadow">
+
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
+
+                    <span>Do I need IELTS to study abroad?</span>
+
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                </button>
+
+                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
+
+                    Many universities require IELTS, but some institutions accept alternatives
+                    like PTE or OET, and in certain cases IELTS may not be mandatory.
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 4 -->
+
+            <div class="faq-item bg-white rounded-xl shadow">
+
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
+
+                    <span>Does SpeakAbroad help with visa processing?</span>
+
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                </button>
+
+                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
+
+                    Yes. We provide complete visa guidance including documentation,
+                    application preparation, and interview support to ensure a smooth visa process.
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 5 -->
+
+            <div class="faq-item bg-white rounded-xl shadow">
+
+                <button
+                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
+
+                    <span>How can I start my study abroad journey?</span>
+
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                </button>
+
+                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
+
+                    You can start by contacting SpeakAbroad for a free consultation.
+                    Our counsellors will guide you through course selection, university options,
+                    and the complete application process.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="bg-primary py-20 text-center text-white">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Still Have Questions?
+        </h2>
+
+        <p class="text-blue-100 mb-8">
+            Our team is ready to guide you through every step of your study abroad journey.
+        </p>
+
+        <a href="/contact"
+            class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+
+            Contact Us
+
+        </a>
+
+    </div>
+
+</section>
+
+<script>
+
+    document.querySelectorAll(".faq-question").forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector("i");
+
+            answer.classList.toggle("hidden");
+            icon.classList.toggle("rotate-180");
+
+        });
+
+    });
+
+</script>
+
+{% endblock %}
