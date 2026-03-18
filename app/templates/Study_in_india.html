@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="relative h-[50vh] flex items-center justify-center text-center text-white">
+
+    <img src="https://media.istockphoto.com/id/1382384282/photo/bangalore-or-bengaluru.jpg?s=612x612&w=0&k=20&c=6pxwL3JxNV2B_NZSLMZLhrSLqAbyCPlGuSZYKImpjKQ="
+        class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-4xl px-6">
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase shine-text mt-10">
+            Study in India
+        </h1>
+
+        <p class="text-gray-200 mb-8">
+            <a href="/" class="text-white">Home</a>
+            <span> > Study in India</span>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT STUDY IN INDIA -->
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+            <img src="https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk="
+                class="rounded-xl shadow-xl w-full h-[400px] md:h-[600px] object-cover">
+        </div>
+
+        <div>
+
+            <h2 class="text-4xl font-bold text-primary mb-6">
+                Study in India with SpeakAbroad
+            </h2>
+
+            <p class="text-gray-600 mb-6 text-justify">
+                India is one of the fastest-growing education hubs, offering world-class
+                universities, affordable tuition fees, and globally recognized degrees.
+                With diverse courses across engineering, medicine, management, and arts,
+                India provides excellent academic opportunities for students.
+            </p>
+
+            <p class="text-gray-600 mb-6 text-justify">
+                SpeakAbroad helps students choose the right institution, complete admissions,
+                and navigate the entire process smoothly. We ensure students get the best
+                academic exposure with strong career prospects.
+            </p>
+
+            <p class="text-gray-600 text-justify">
+                Begin your academic journey in India and build a strong foundation
+                for a successful future.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- TOP STUDY CITIES -->
+
+<section class="py-24 bg-fixed bg-center bg-cover relative">
+
+    <div class="absolute inset-0 bg-white"></div>
+
+    <div class="relative mx-auto px-6">
+
+        <h2 class="text-4xl text-center font-bold text-primary mb-16">
+            Top Study Cities in India
+        </h2>
+
+        <div class="flex gap-6 overflow-x-auto pb-6 scroll-smooth">
+
+            <!-- Bangalore -->
+
+            <div class="min-w-[280px] h-[420px] relative rounded-xl overflow-hidden shadow-xl group">
+                <img src="https://media.gettyimages.com/id/899271434/photo/sunset-at-vidhana-soudha-in-bangalore-karnataka-india.jpg?s=612x612&w=gi&k=20&c=N3DkvaBQ2bbW8LUJZpVoVYQ5X-GQrew8i95kW9tw7tE="
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/40"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <h3 class="text-2xl font-semibold">Bangalore</h3>
+                </div>
+            </div>
+
+            <!-- Delhi -->
+
+            <div class="min-w-[280px] h-[420px] relative rounded-xl overflow-hidden shadow-xl group">
+                <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/40"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <h3 class="text-2xl font-semibold">Delhi</h3>
+                </div>
+            </div>
+
+            <!-- Mumbai -->
+
+            <div class="min-w-[280px] h-[420px] relative rounded-xl overflow-hidden shadow-xl group">
+                <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/40"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <h3 class="text-2xl font-semibold">Mumbai</h3>
+                </div>
+            </div>
+
+            <!-- Chennai -->
+
+            <div class="min-w-[280px] h-[420px] relative rounded-xl overflow-hidden shadow-xl group">
+                <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220"
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/40"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <h3 class="text-2xl font-semibold">Chennai</h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ENTRANCE EXAMS -->
+
+<section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Popular Entrance Exams
+        </h2>
+
+        <p class="text-gray-500 mb-14 max-w-2xl mx-auto text-xs">
+            Prepare for top Indian entrance exams required for higher education.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            <!-- JEE -->
+
+            <div class="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
+                <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
+                    <i class="fa-solid fa-calculator text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
+                    JEE
+                </h3>
+            </div>
+
+            <!-- NEET -->
+
+            <div class="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
+                <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
+                    <i class="fa-solid fa-user-doctor text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
+                    NEET
+                </h3>
+            </div>
+
+            <!-- CAT -->
+
+            <div class="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
+                <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
+                    <i class="fa-solid fa-briefcase text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
+                    CAT
+                </h3>
+            </div>
+
+            <!-- CUET -->
+
+            <div class="group bg-white p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
+                <div class="w-14 h-14 mx-auto flex items-center justify-center rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
+                    <i class="fa-solid fa-book text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
+                    CUET
+                </h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="bg-primary py-20 text-center text-white">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Start Your Journey in India Today
+        </h2>
+
+        <p class="mb-8 text-blue-100">
+            Get expert guidance and secure admission to top Indian universities.
+        </p>
+
+        <a href="#" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+            Get Free Consultation
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
