@@ -5,24 +5,23 @@
 
 <!-- HERO SECTION -->
 
-<section class="relative h-[60vh] md:h-[74vh] flex items-center justify-center text-center text-white">
+<section class="relative h-[60vh] md:h-[74vh] flex items-center justify-center text-center text-white overflow-hidden">
 
-    <img src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?s=612x612&w=0&k=20&c=gWTTDs_Hl6AEGOunoQ2LsjrcTJkknf9G8BGqsywyEtE="
-        class="absolute inset-0 w-full h-full object-cover">
+    <!-- VIDEO BACKGROUND -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="{% static 'video/banner.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- OVERLAY -->
+    <div class="absolute inset-0 bg-black/20"></div>
 
+    <!-- CONTENT -->
     <div class="relative z-10 max-w-4xl px-6">
 
-
-
-
         <h1 data-aos="zoom-in" class="text-3xl md:text-4xl font-bold mb-6 uppercase shine-text">
-
             One Vision. Unlimited Destinations.
-
         </h1>
-
 
         <style>
             .shine-text {
@@ -50,20 +49,13 @@
             }
         </style>
 
-
-
-
         <p data-aos="zoom-in" data-aos-delay="200" class="text-sm md:text-md text-gray-200 mb-8">
-
             Your Language. Your Journey. Study anywhere in the world with expert guidance.
-
         </p>
 
         <a href="{% url 'Study_in_abroad' %}" data-aos="fade-up" data-aos-delay="300"
             class="bg-primary hover:bg-secondary transition px-8 py-2 rounded-xl text-lg">
-
             Explore
-
         </a>
 
     </div>
@@ -355,52 +347,7 @@
 
             <!-- Features -->
 
-            <div class="grid grid-cols-2 gap-6 mb-8">
 
-                <div class="flex items-start gap-3">
-
-                    <i class="fa-solid fa-graduation-cap text-primary text-xl"></i>
-
-                    <span class="text-gray-700 font-medium">
-                        Expert Counselling
-                    </span>
-
-                </div>
-
-
-                <div class="flex items-start gap-3">
-
-                    <i class="fa-solid fa-globe text-primary text-xl"></i>
-
-                    <span class="text-gray-700 font-medium">
-                        Global University Network
-                    </span>
-
-                </div>
-
-
-                <div class="flex items-start gap-3">
-
-                    <i class="fa-solid fa-file text-primary text-xl"></i>
-
-                    <span class="text-gray-700 font-medium">
-                        Documentation Support
-                    </span>
-
-                </div>
-
-
-                <div class="flex items-start gap-3">
-
-                    <i class="fa-solid fa-passport text-primary text-xl"></i>
-
-                    <span class="text-gray-700 font-medium">
-                        Visa Assistance
-                    </span>
-
-                </div>
-
-            </div>
 
 
             <a href="{% url 'about' %}"
@@ -430,96 +377,98 @@
 
 
 
-<section class="py-20 bg-dark">
+<section class="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
 
-    <div class="max-w-7xl mx-auto px-6 text-center">
+    <!-- subtle glow -->
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#3b82f6,_transparent_60%)]"></div>
 
-        <h2 class="text-4xl font-bold text-light mb-4" data-aos="fade-up">
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+
+        <!-- Heading -->
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
             Our Services
         </h2>
 
-        <p class="text-light max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
-            SpeakAbroad offers expert language training and professional guidance to help students successfully pursue
-            their study abroad goals.
+        <p class="text-gray-300 max-w-2xl mx-auto mb-16">
+            SpeakAbroad provides expert guidance and end-to-end support to help you achieve your global education goals.
         </p>
 
+        <!-- SERVICES GRID -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        <div class="grid md:grid-cols-3 grid-cols-2 gap-10">
+            <!-- Card -->
+            <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10
+                        hover:border-primary hover:bg-white/10 transition duration-300 group">
 
-            <!-- IELTS -->
+                <div class="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary/20 flex items-center justify-center
+                            group-hover:scale-110 transition">
+                    <i class="fa-solid fa-graduation-cap text-primary text-2xl"></i>
+                </div>
 
-            <div class="p-8" data-aos="fade-up">
-
-                <i class="fa-solid fa-language text-light text-4xl mb-4"></i>
-
-                <h3 class="font-semibold text-light text-lg mb-2">
-                    IELTS Training
+                <h3 class="text-lg font-semibold text-white mb-2">
+                    Expert Counselling
                 </h3>
+
+                <p class="text-gray-400 text-sm">
+                    Personalized guidance to choose the right country, course, and university.
+                </p>
 
             </div>
 
+            <!-- Card -->
+            <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10
+                        hover:border-primary hover:bg-white/10 transition duration-300 group">
 
-            <!-- OET -->
+                <div class="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary/20 flex items-center justify-center
+                            group-hover:scale-110 transition">
+                    <i class="fa-solid fa-globe text-primary text-2xl"></i>
+                </div>
 
-            <div class="p-8" data-aos="fade-up" data-aos-delay="100">
-
-                <i class="fa-solid fa-user-doctor text-light text-4xl mb-4"></i>
-
-                <h3 class="font-semibold text-light text-lg mb-2">
-                    OET Coaching
+                <h3 class="text-lg font-semibold text-white mb-2">
+                    Global University Network
                 </h3>
+
+                <p class="text-gray-400 text-sm">
+                    Access to top universities across Europe and worldwide destinations.
+                </p>
 
             </div>
 
+            <!-- Card -->
+            <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10
+                        hover:border-primary hover:bg-white/10 transition duration-300 group">
 
-            <!-- PTE -->
+                <div class="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary/20 flex items-center justify-center
+                            group-hover:scale-110 transition">
+                    <i class="fa-solid fa-file text-primary text-2xl"></i>
+                </div>
 
-            <div class="p-8" data-aos="fade-up" data-aos-delay="200">
-
-                <i class="fa-solid fa-laptop text-light text-4xl mb-4"></i>
-
-                <h3 class="font-semibold text-light text-lg mb-2">
-                    PTE Preparation
+                <h3 class="text-lg font-semibold text-white mb-2">
+                    Documentation Support
                 </h3>
+
+                <p class="text-gray-400 text-sm">
+                    Assistance with SOP, LOR, and all application documentation.
+                </p>
 
             </div>
 
+            <!-- Card -->
+            <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10
+                        hover:border-primary hover:bg-white/10 transition duration-300 group">
 
-            <!-- Spoken English -->
+                <div class="w-14 h-14 mx-auto mb-5 rounded-xl bg-primary/20 flex items-center justify-center
+                            group-hover:scale-110 transition">
+                    <i class="fa-solid fa-passport text-primary text-2xl"></i>
+                </div>
 
-            <div class="p-8" data-aos="fade-up" data-aos-delay="300">
-
-                <i class="fa-solid fa-comments text-light text-4xl mb-4"></i>
-
-                <h3 class="font-semibold text-light text-lg mb-2">
-                    Spoken English
-                </h3>
-
-            </div>
-
-
-            <!-- Study Abroad Consulting -->
-
-            <div class="p-8" data-aos="fade-up" data-aos-delay="400">
-
-                <i class="fa-solid fa-globe text-light text-4xl mb-4"></i>
-
-                <h3 class="font-semibold text-light text-lg mb-2">
-                    Study Abroad Consulting
-                </h3>
-
-            </div>
-
-
-            <!-- Visa Assistance -->
-
-            <div class="p-8" data-aos="fade-up" data-aos-delay="500">
-
-                <i class="fa-solid fa-passport text-light text-4xl mb-4"></i>
-
-                <h3 class="font-semibold text-light text-lg mb-2">
+                <h3 class="text-lg font-semibold text-white mb-2">
                     Visa Assistance
                 </h3>
+
+                <p class="text-gray-400 text-sm">
+                    Complete visa guidance with high approval success rate.
+                </p>
 
             </div>
 
@@ -528,6 +477,7 @@
     </div>
 
 </section>
+
 
 
 
