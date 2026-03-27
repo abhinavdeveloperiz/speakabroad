@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="relative h-[50vh] flex items-center justify-center text-center text-white">
+
+    <img src="https://media.istockphoto.com/id/1382384282/photo/bangalore-or-bengaluru.jpg?s=612x612&w=0&k=20&c=6pxwL3JxNV2B_NZSLMZLhrSLqAbyCPlGuSZYKImpjKQ="
+        class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-4xl px-6">
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase shine-text mt-10">
+            Study in India
+        </h1>
+
+        <p class="text-gray-200 mb-8">
+            <a href="/" class="text-white">Home</a>
+            <span> > Study in India</span>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT STUDY IN INDIA -->
+
+<section class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+            <img src="https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk="
+                class="rounded-xl shadow-xl w-full h-[400px] md:h-[600px] object-cover">
+        </div>
+
+        <div>
+
+            <h2 class="text-4xl font-bold text-primary mb-6">
+                Study in India with SpeakAbroad
+            </h2>
+
+            <p class="text-gray-600 mb-6 text-justify">
+                India has become one of the most attractive destinations for higher education due to its strong academic
+                heritage,
+                diverse learning opportunities, and rapidly developing economy. Every year, thousands of students choose
+                India to
+                pursue their academic goals and build successful careers.
+            </p>
+
+            <p class="text-gray-600 mb-6 text-justify">
+                The Indian education system combines traditional knowledge with modern teaching methods, helping
+                students develop
+                critical thinking, research skills, and practical experience. Students benefit from affordable tuition
+                fees,
+                multicultural exposure, and strong career opportunities.
+            </p>
+
+            <p class="text-gray-600 text-justify">
+                Studying in India provides globally recognized qualifications and prepares students to succeed in an
+                interconnected world.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHAT WE OFFER -->
+
+<section class="py-20 bg-gray-50">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
+            What We Offer
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6 text-gray-700">
+
+            <ul class="space-y-3">
+                <li>• Study Abroad Counselling</li>
+                <li>• University & Course Selection Guidance</li>
+                <li>• Admission Application Assistance</li>
+                <li>• Student Visa Processing Support</li>
+            </ul>
+
+            <ul class="space-y-3">
+                <li>• Pre-Departure Orientation</li>
+                <li>• Career Counselling</li>
+                <li>• Study in India Admission Guidance</li>
+                <li>• Interview Preparation</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- POPULAR COURSES -->
+
+<section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-bold text-center text-primary mb-16">
+            Popular Courses in India
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8 text-gray-700">
+
+            <div>
+                <h3 class="font-semibold mb-3">Business & Management</h3>
+                <p>BBA, MBA, International Business, HR, Marketing</p>
+
+                <h3 class="font-semibold mt-6 mb-3">Engineering</h3>
+                <p>Civil, Mechanical, Electrical, CSE, AI, Robotics, IT</p>
+
+                <h3 class="font-semibold mt-6 mb-3">Medical</h3>
+                <p>MBBS, BDS, BAMS, BHMS</p>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-3">Nursing & Health</h3>
+                <p>BSc Nursing, GNM, MSc Nursing, Physiotherapy</p>
+
+                <h3 class="font-semibold mt-6 mb-3">Hospitality</h3>
+                <p>Hotel Management, Culinary Arts, Tourism</p>
+
+                <h3 class="font-semibold mt-6 mb-3">Finance</h3>
+                <p>B.Com, CA, Banking & Finance</p>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-3">Media & Arts</h3>
+                <p>Journalism, Mass Communication, Film</p>
+
+                <h3 class="font-semibold mt-6 mb-3">Law</h3>
+                <p>LLB, Corporate Law, Criminal Law</p>
+
+                <h3 class="font-semibold mt-6 mb-3">Science</h3>
+                <p>BSc Physics, Chemistry, Biotechnology, Data Science</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="py-24 bg-gray-50">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-4xl text-center font-bold text-primary mb-12">
+            Benefits of Studying in India
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 text-gray-700">
+
+            <ul class="space-y-4">
+                <li>• High-quality education system</li>
+                <li>• Affordable tuition & living costs</li>
+                <li>• Wide variety of programs</li>
+                <li>• Globally recognized degrees</li>
+                <li>• English medium education</li>
+            </ul>
+
+            <ul class="space-y-4">
+                <li>• Cultural diversity & rich heritage</li>
+                <li>• Strong industry connections</li>
+                <li>• Research & innovation opportunities</li>
+                <li>• Scholarships & financial support</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STUDY DESTINATIONS -->
+
+<section class="py-24 bg-white">
+
+    <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <h2 class="text-4xl font-bold text-primary mb-10">
+            Study Destinations
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-700">
+
+            <div class="p-6 shadow rounded-xl">Kerala</div>
+            <div class="p-6 shadow rounded-xl">Bangalore</div>
+            <div class="p-6 shadow rounded-xl">Chennai</div>
+            <div class="p-6 shadow rounded-xl">Hyderabad</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="bg-primary py-20 text-center text-white">
+
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold mb-6">
+            Start Your Journey in India Today
+        </h2>
+
+        <p class="mb-8 text-blue-100">
+            Get expert guidance and secure admission to top Indian universities.
+        </p>
+
+        <a href="#" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+            Get Free Consultation
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
