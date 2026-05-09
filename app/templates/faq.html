@@ -33,14 +33,15 @@
 
 <section class="py-24 bg-gray-50">
 
-    <div class="max-w-4xl mx-auto px-6">
+    <div class="max-w-5xl mx-auto px-6">
 
-        <h2 class="text-4xl font-bold text-center text-primary mb-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-14">
             Frequently Asked Questions
         </h2>
 
         <div class="space-y-6">
 
+            {% for faq in faqs %}
             <!-- FAQ 1 -->
 
             <div class="faq-item bg-white rounded-xl shadow">
@@ -48,7 +49,7 @@
                 <button
                     class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
 
-                    <span>What services does SpeakAbroad provide?</span>
+                    <span>{{ faq.question }}</span>
 
                     <i class="fa-solid fa-chevron-down transition-transform"></i>
 
@@ -56,102 +57,13 @@
 
                 <div class="faq-answer hidden px-6 pb-6 text-gray-600">
 
-                    SpeakAbroad provides complete guidance for students planning to study abroad including university
-                    selection,
-                    language test preparation, documentation support, and visa assistance.
+                    {{ faq.answer }}
 
                 </div>
 
             </div>
 
-            <!-- FAQ 2 -->
-
-            <div class="faq-item bg-white rounded-xl shadow">
-
-                <button
-                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
-
-                    <span>Which countries can I study in through SpeakAbroad?</span>
-
-                    <i class="fa-solid fa-chevron-down transition-transform"></i>
-
-                </button>
-
-                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
-
-                    We assist students in applying to universities in countries such as Austria, Georgia, Netherlands,
-                    Denmark, Italy, and several other international destinations.
-
-                </div>
-
-            </div>
-
-            <!-- FAQ 3 -->
-
-            <div class="faq-item bg-white rounded-xl shadow">
-
-                <button
-                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
-
-                    <span>Do I need IELTS to study abroad?</span>
-
-                    <i class="fa-solid fa-chevron-down transition-transform"></i>
-
-                </button>
-
-                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
-
-                    Many universities require IELTS, but some institutions accept alternatives
-                    like PTE or OET, and in certain cases IELTS may not be mandatory.
-
-                </div>
-
-            </div>
-
-            <!-- FAQ 4 -->
-
-            <div class="faq-item bg-white rounded-xl shadow">
-
-                <button
-                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
-
-                    <span>Does SpeakAbroad help with visa processing?</span>
-
-                    <i class="fa-solid fa-chevron-down transition-transform"></i>
-
-                </button>
-
-                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
-
-                    Yes. We provide complete visa guidance including documentation,
-                    application preparation, and interview support to ensure a smooth visa process.
-
-                </div>
-
-            </div>
-
-            <!-- FAQ 5 -->
-
-            <div class="faq-item bg-white rounded-xl shadow">
-
-                <button
-                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
-
-                    <span>How can I start my study abroad journey?</span>
-
-                    <i class="fa-solid fa-chevron-down transition-transform"></i>
-
-                </button>
-
-                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
-
-                    You can start by contacting SpeakAbroad for a free consultation.
-                    Our counsellors will guide you through course selection, university options,
-                    and the complete application process.
-
-                </div>
-
-            </div>
+            {% endfor %}
 
         </div>
 

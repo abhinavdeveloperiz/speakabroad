@@ -37,14 +37,14 @@
 
         <div>
 
-            <img src="/static/images/studyabroad.jpg"
-                class="rounded-xl shadow-xl w-full h-[400px] md:h-[600px] object-cover">
+            <img src="https://www.avanse.com/blogs/images/blogs-migration-73.jpg"
+                class="rounded-xl shadow-xl w-full h-[300px] md:h-[400px] object-cover">
 
         </div>
 
         <div>
 
-            <h2 class="text-4xl font-bold text-primary mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary mb-6">
                 Study Abroad with SpeakAbroad
             </h2>
 
@@ -90,7 +90,7 @@
 
     <div class="relative mx-auto px-6">
 
-        <h2 class="text-4xl text-center font-bold text-primary mb-16">
+        <h2 class="text-2xl md:text-3xl text-center font-bold text-primary mb-16">
             Popular Study Destinations
         </h2>
 
@@ -235,98 +235,271 @@
 
 
 
-<!-- LANGUAGE TESTS -->
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- HEADING -->
+        <div class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-500 mx-auto text-center">
+                Popular Courses
+            </h2>
+
+        </div>
+
+        <!-- SCROLL CONTAINER -->
+        <div class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 hide-scrollbar"
+            data-aos="slide-left">
+
+            {% for c in courses %}
+            <!-- CARD -->
+            <div
+                class="flex-shrink-0 w-[280px] md:w-[320px] snap-start group relative rounded-3xl overflow-hidden shadow-lg">
+
+                <img src="{{ c.image.url }}" loading="lazy" alt="{{ c.Course_title }}"
+                    class="w-full h-[520px] object-cover transition duration-700 md:group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-black/40 md:group-hover:bg-black/60 transition"></div>
+
+                <div class="absolute top-6 left-6 z-10">
+                    <h3 class="text-white text-xl font-semibold">
+                        {{ c.Course_title }}
+                    </h3>
+                </div>
+
+                <!-- Desktop Hover -->
+                <div class="absolute inset-0 hidden md:flex items-end p-6 opacity-0 translate-y-10
+                    group-hover:opacity-100 group-hover:translate-y-0 transition duration-500 z-10">
+
+                    <ul class="text-white text-sm space-y-2">
+
+                        {% if c.course1 %}<li>• {{ c.course1 }}</li>{% endif %}
+                        {% if c.course2 %}<li>• {{ c.course2 }}</li>{% endif %}
+                        {% if c.course3 %}<li>• {{ c.course3 }}</li>{% endif %}
+                        {% if c.course4 %}<li>• {{ c.course4 }}</li>{% endif %}
+                        {% if c.course5 %}<li>• {{ c.course5 }}</li>{% endif %}
+                        {% if c.course6 %}<li>• {{ c.course6 }}</li>{% endif %}
+                        {% if c.course7 %}<li>• {{ c.course7 }}</li>{% endif %}
+                        {% if c.course8 %}<li>• {{ c.course8 }}</li>{% endif %}
+                        {% if c.course9 %}<li>• {{ c.course9 }}</li>{% endif %}
+                        {% if c.course10 %}<li>• {{ c.course10 }}</li>{% endif %}
+                        {% if c.course11 %}<li>• {{ c.course11 }}</li>{% endif %}
+                        {% if c.course12 %}<li>• {{ c.course12 }}</li>{% endif %}
+
+                    </ul>
+                </div>
+
+                <!-- Mobile Always Visible -->
+                <div class="absolute bottom-0 left-0 right-0 md:hidden p-4 bg-black/40 z-10">
+                    <ul class="text-white text-xs space-y-1">
+
+                        {% if c.course1 %}<li>• {{ c.course1 }}</li>{% endif %}
+                        {% if c.course2 %}<li>• {{ c.course2 }}</li>{% endif %}
+                        {% if c.course3 %}<li>• {{ c.course3 }}</li>{% endif %}
+                        {% if c.course4 %}<li>• {{ c.course4 }}</li>{% endif %}
+                        {% if c.course5 %}<li>• {{ c.course5 }}</li>{% endif %}
+                        {% if c.course6 %}<li>• {{ c.course6 }}</li>{% endif %}
+                        {% if c.course7 %}<li>• {{ c.course7 }}</li>{% endif %}
+                        {% if c.course8 %}<li>• {{ c.course8 }}</li>{% endif %}
+                        {% if c.course9 %}<li>• {{ c.course9 }}</li>{% endif %}
+                        {% if c.course10 %}<li>• {{ c.course10 }}</li>{% endif %}
+                        {% if c.course11 %}<li>• {{ c.course11 }}</li>{% endif %}
+                        {% if c.course12 %}<li>• {{ c.course12 }}</li>{% endif %}
+
+                    </ul>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
 
 <section class="py-24 bg-white">
-
     <div class="max-w-7xl mx-auto px-6 text-center">
 
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        <!-- Heading -->
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-500 mb-4">
             Accepted Language Tests
         </h2>
 
-        <p class="text-gray-500 mb-14 max-w-2xl mx-auto text-xs">
+        <p class="text-gray-500 mb-16 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
             We prepare students for internationally recognized language
             proficiency exams required for studying abroad.
         </p>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Grid -->
+        <div class="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-8">
 
-            <!-- IELTS -->
-            <div class="group bg-white p-8 rounded-xl shadow-sm 
-                hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
+            {% for l in languages %}
+            <div class="group relative ">
 
-                <div class="w-14 h-14 mx-auto flex items-center justify-center 
-                    rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
 
-                    <i class="fa-solid fa-graduation-cap text-blue-600 text-xl 
-                        group-hover:text-blue-500"></i>
+                <!-- Image -->
+                <div class="relative z-10 flex items-center justify-center h-28">
+                    <img src="{{ l.image.url }}" alt="language test" class="max-h-60 object-contain transition duration-300 
+                     ">
                 </div>
 
-                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
-                    IELTS
-                </h3>
+
 
             </div>
-
-            <!-- PTE -->
-            <div class="group bg-white p-8 rounded-xl shadow-sm 
-                hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
-
-                <div class="w-14 h-14 mx-auto flex items-center justify-center 
-                    rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
-
-                    <i class="fa-solid fa-language text-blue-600 text-xl 
-                        group-hover:text-blue-500"></i>
-                </div>
-
-                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
-                    PTE
-                </h3>
-
-            </div>
-
-            <!-- TOEFL -->
-            <div class="group bg-white p-8 rounded-xl shadow-sm 
-                hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
-
-                <div class="w-14 h-14 mx-auto flex items-center justify-center 
-                    rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
-
-                    <i class="fa-solid fa-book-open text-blue-600 text-xl 
-                        group-hover:text-blue-500"></i>
-                </div>
-
-                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
-                    TOEFL
-                </h3>
-
-            </div>
-
-            <!-- Duolingo -->
-            <div class="group bg-white p-8 rounded-xl shadow-sm 
-                hover:shadow-xl hover:-translate-y-2 transition duration-300 hover:bg-blue-500">
-
-                <div class="w-14 h-14 mx-auto flex items-center justify-center 
-                    rounded-full bg-blue-100 group-hover:bg-white transition mb-4">
-
-                    <i class="fa-solid fa-globe text-blue-600 text-xl 
-                        group-hover:text-blue-500"></i>
-                </div>
-
-                <h3 class="font-semibold text-lg text-gray-800 group-hover:text-white">
-                    Duolingo
-                </h3>
-
-            </div>
+            {% endfor %}
 
         </div>
 
     </div>
-
 </section>
 
 
+<!-- SECTION -->
+<section class="animated-bg py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- HEADING -->
+        <div class="text-center mb-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
+                Students Graduated Abroad
+            </h2>
+
+
+        </div>
+
+        <!-- SWIPER -->
+        <div class="swiper graduateSwiper pb-16">
+
+            <div class="swiper-wrapper">
+
+                {% for g in graduates %}
+                <!-- CARD -->
+                <div class="swiper-slide">
+                    <div class="group bg-white backdrop-blur-xl border border-gray-100 
+                                rounded-3xl p-8 pt-10 text-center 
+                                shadow-md hover:shadow-2xl transition-all duration-500">
+
+                        <!-- AVATAR -->
+                        <div class="flex justify-center mb-6">
+                            <div class="p-[3px] rounded-full bg-gradient-to-tr from-blue-500 to-blue-300">
+                                <img src="{{ g.image.url }}" class="w-32 h-32 rounded-full object-cover object-top border-4 border-white 
+                                           transition-transform duration-300 group-hover:scale-110">
+                            </div>
+                        </div>
+
+                        <!-- CONTENT -->
+                        <h3 class="text-lg font-semibold text-gray-800">
+                            {{ g.name }}
+                        </h3>
+
+                        <p class="text-blue-600 text-sm mt-2 font-medium">
+                            {{ g.course }}
+                        </p>
+
+                        <p class="text-gray-500 text-sm mt-1">
+                            {{ g.university }}
+                        </p>
+
+                        {% if g.country %}
+                        <p class="text-gray-500 text-sm mt-1">
+                            {{ g.country }}
+                        </p>
+                        {% endif %}
+
+
+
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+
+            <!-- PAGINATION -->
+            <div class="swiper-pagination !bottom-0"></div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<style>
+    .animated-bg {
+        position: relative;
+
+        /* Stronger blue ↔ pink palette */
+        background: linear-gradient(-105deg,
+                #2563eb,
+                /* deep blue */
+                #3b82f6,
+                /* primary blue */
+                #ec4899,
+                /* pink */
+                #f472b6
+                /* light pink */
+            );
+
+        background-size: 300% 300%;
+
+        /* Faster + sharper */
+        animation: gradientShift 4s linear infinite;
+    }
+
+    /* Faster motion */
+    @keyframes gradientShift {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Stronger glow to match colors */
+    .animated-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background:
+            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.35), transparent 45%),
+            radial-gradient(circle at 80% 70%, rgba(236, 72, 153, 0.35), transparent 45%);
+
+        mix-blend-mode: screen;
+        pointer-events: none;
+    }
+</style>
+
+
+<!-- SWIPER INIT -->
+<script>
+    new Swiper(".graduateSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        speed: 800,
+        autoplay: {
+            delay: 2800,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+        }
+    });
+</script>
 
 
 <!-- CTA -->
@@ -335,7 +508,7 @@
 
     <div class="max-w-4xl mx-auto px-6">
 
-        <h2 class="text-3xl font-bold mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">
             Start Your Study Abroad Journey Today
         </h2>
 

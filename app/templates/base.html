@@ -9,18 +9,29 @@
 
     <title>Speakabroad</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+
+
 
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -37,11 +48,7 @@
 
                     },
 
-                    fontFamily: {
 
-                        poppins: ['Poppins', 'sans-serif'],
-
-                    }
 
                 }
             }
@@ -50,8 +57,61 @@
 
 </head>
 
+<style>
+    /* Entire Website Font */
+    html,
+    body {
+        font-family: "Cossette Texte", sans-serif;
+    }
 
-<body class="font-poppins bg-light text-dark overflow-x-hidden">
+    .cossette-texte-regular {
+        font-family: "Cossette Texte", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .cossette-texte-bold {
+        font-family: "Cossette Texte", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+
+    /* Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-transform: uppercase;
+        letter-spacing: normal;
+        line-height: 1.2;
+
+    }
+
+    h1 {
+        font-weight: 700;
+    }
+
+    h2,
+    h3 {
+        font-weight: 600;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-weight: 500;
+    }
+
+    /* Paragraph */
+    p {
+        font-weight: 400;
+        line-height: 1.7;
+    }
+</style>
+
+<body class=" bg-light text-dark overflow-x-hidden">
 
     {% include "navbar.html" %}
 
