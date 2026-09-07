@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: speakabroad
+    runtime: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn speakabroad.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "True"
+      - key: WEB_CONCURRENCY
+        value: "4"
