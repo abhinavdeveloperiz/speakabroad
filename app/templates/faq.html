@@ -7,7 +7,6 @@
 
 <section class="relative h-[45vh] flex items-center justify-center text-center text-white">
 
-    ```
     <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
         class="absolute inset-0 w-full h-full object-cover">
 
@@ -25,21 +24,20 @@
         </p>
 
     </div>
-    ```
 
 </section>
 
 <!-- FAQ SECTION -->
 
-<section class="py-24 bg-gray-50">
+<section class="py-16 md:py-24 bg-gray-50">
 
-    <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
-        <h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-10 md:mb-14">
             Frequently Asked Questions
         </h2>
 
-        <div class="space-y-6">
+        <div class="space-y-4 sm:space-y-6">
 
             {% for faq in faqs %}
             <!-- FAQ 1 -->
@@ -47,15 +45,15 @@
             <div class="faq-item bg-white rounded-xl shadow">
 
                 <button
-                    class="faq-question w-full flex justify-between items-center p-6 text-left font-semibold text-lg">
+                    class="faq-question w-full flex justify-between items-center p-5 sm:p-6 text-left font-semibold text-base sm:text-lg min-h-[54px]">
 
-                    <span>{{ faq.question }}</span>
+                    <span class="pr-4">{{ faq.question }}</span>
 
-                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                    <i class="fa-solid fa-chevron-down transition-transform shrink-0 text-primary"></i>
 
                 </button>
 
-                <div class="faq-answer hidden px-6 pb-6 text-gray-600">
+                <div class="faq-answer hidden px-5 sm:px-6 pb-5 sm:pb-6 text-gray-600 text-sm sm:text-base">
 
                     {{ faq.answer }}
 

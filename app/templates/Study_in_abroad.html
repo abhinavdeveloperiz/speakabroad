@@ -91,8 +91,8 @@
         </div>
 
         <!-- 3D Infinite Spiral Viewport -->
-        <div
-            style="height: 540px; position: relative; overflow: hidden; width: 100%; max-width: 1100px; margin: 0 auto;">
+        <div class="infinite-spiral-viewport"
+            style="position: relative; overflow: hidden; width: 100%; max-width: 1100px; margin: 0 auto;">
             <!-- TOP BLEND OVERLAY -->
             <div
                 class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-gray-50 via-gray-50/70 to-transparent z-30">
@@ -142,6 +142,15 @@
 
 <!-- InfiniteSpiral Component CSS -->
 <style>
+    .infinite-spiral-viewport {
+        height: 540px;
+    }
+    @media (max-width: 640px) {
+        .infinite-spiral-viewport {
+            height: 440px;
+        }
+    }
+
     .infinite-spiral {
         position: relative;
         width: 100%;
@@ -156,9 +165,26 @@
         --infinite-spiral-card-height: 275px;
         --infinite-spiral-card-radius: 15px;
         cursor: grab;
-        touch-action: pan-x;
+        touch-action: pan-y;
         user-select: none;
         -webkit-user-select: none;
+    }
+
+    @media (max-width: 640px) {
+        .infinite-spiral {
+            --infinite-spiral-card-width: 145px;
+            --infinite-spiral-card-height: 215px;
+            --infinite-spiral-card-radius: 12px;
+            perspective: 800px;
+        }
+        .infinite-spiral__title {
+            font-size: 13px !important;
+            margin-bottom: 4px !important;
+        }
+        .infinite-spiral__list {
+            font-size: 9px !important;
+            gap: 2px !important;
+        }
     }
 
     .infinite-spiral__stage {
@@ -353,6 +379,8 @@
 
             root.addEventListener('pointerdown', (event) => {
                 if (!dragEnabled || event.button !== 0) return;
+                // On mobile touch, allow the user to scroll vertically through the page naturally
+                if (event.pointerType === 'touch') return;
                 dragging = true;
                 dragMoved = false;
                 lastPointerY = event.clientY;
@@ -407,8 +435,12 @@
                 const width = Math.max(bounds.width || root.clientWidth || window.innerWidth, 1);
                 const height = Math.max(bounds.height || root.clientHeight || 680, 1);
                 const halfHeight = height / 2;
-                const fit = Math.min(1, Math.max(0.65, width / 720));
-                const responsiveRadius = Math.min(radius, Math.max(140, width * 0.38)) * fit;
+                const isMobile = width < 640;
+                const fit = isMobile ? Math.min(0.85, Math.max(0.55, width / 450)) : Math.min(1, Math.max(0.65, width / 720));
+                const responsiveRadius = isMobile
+                    ? Math.max(105, Math.min(170, width * 0.35)) * fit
+                    : Math.min(radius, Math.max(140, width * 0.38)) * fit;
+                const activeVerticalSpacing = isMobile ? verticalSpacing * 0.75 : verticalSpacing;
                 const fadeStart = clamp(1 - edgeFade, 0, 0.98);
                 const turnSize = Math.max(cardsPerTurn, 1);
 
@@ -424,7 +456,7 @@
                     const angleRadians = (angle * Math.PI) / 180;
                     const x = Math.sin(angleRadians) * responsiveRadius;
                     const z = Math.cos(angleRadians) * responsiveRadius;
-                    const y = offset * verticalSpacing * fit;
+                    const y = offset * activeVerticalSpacing * fit;
                     const visualScale = scale;
                     const depth = (z / Math.max(responsiveRadius, 1) + 1) / 2;
 
