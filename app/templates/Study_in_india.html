@@ -86,20 +86,23 @@
         <div class="relative group/carousel">
             <!-- Floating Side Navigation Arrows -->
             <button id="floatPrevBtn" aria-label="Previous city"
-                class="absolute -left-2 md:-left-5 top-[220px] -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-gray-800 hover:text-blue-600 shadow-2xl border border-gray-200/80 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer select-none">
+                class="absolute -left-2 md:-left-5 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-gray-800 hover:text-blue-600 shadow-2xl border border-gray-200/80 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer select-none"
+                style="top: 225px; transform: translateY(-50%);">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
             </button>
             <button id="floatNextBtn" aria-label="Next city"
-                class="absolute -right-2 md:-right-5 top-[220px] -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-gray-800 hover:text-blue-600 shadow-2xl border border-gray-200/80 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer select-none">
+                class="absolute -right-2 md:-right-5 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-gray-800 hover:text-blue-600 shadow-2xl border border-gray-200/80 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer select-none"
+                style="top: 225px; transform: translateY(-50%);">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
             </button>
 
             <!-- SCROLL CONTAINER -->
             <div id="citiesScrollContainer"
-                class="flex gap-6 overflow-x-auto scroll-smooth pb-5 hide-scrollbar select-none cursor-grab active:cursor-grabbing snap-x snap-mandatory"
-                style="scrollbar-width: none; -ms-overflow-style: none;">
+                class="cities-carousel flex gap-6 overflow-x-auto scroll-smooth pb-5 hide-scrollbar select-none cursor-grab active:cursor-grabbing snap-x snap-mandatory"
+                style="scrollbar-width: none; -ms-overflow-style: none; min-height: 460px;">
                 {% for dest in destinations %}
-                <div class="flex-shrink-0 w-[280px] md:w-[290px] h-[450px] md:h-[460px] relative rounded-[22px] overflow-hidden shadow-xl group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 snap-start">
+                <div class="city-card flex-shrink-0 relative rounded-[22px] overflow-hidden shadow-xl group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 snap-start"
+                     style="width: 285px; min-width: 285px; height: 450px; min-height: 450px; border-radius: 22px;">
 
                     <!-- Background Image -->
                     {% if dest.image %}
@@ -116,7 +119,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/98 via-black/85 via-35% via-black/45 via-60% via-black/10 via-75% to-transparent pointer-events-none"></div>
 
                     <!-- Content (Title & Bullet Highlights) -->
-                    <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col justify-end text-white pointer-events-none">
+                    <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col justify-end text-white pointer-events-none" style="z-index: 10;">
                         <h3 class="font-extrabold text-[22px] md:text-[24px] uppercase tracking-wider text-white mb-3 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
                             {{ dest.title }}
                         </h3>
@@ -187,6 +190,42 @@
 </section>
 
 <style>
+.cities-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    min-height: 460px;
+    cursor: grab;
+    user-select: none;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.cities-carousel:active {
+    cursor: grabbing;
+}
+.cities-carousel::-webkit-scrollbar {
+    display: none !important;
+}
+.city-card {
+    width: 285px !important;
+    min-width: 285px !important;
+    height: 450px !important;
+    min-height: 450px !important;
+    border-radius: 22px !important;
+    position: relative !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+    scroll-snap-align: start !important;
+    box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.22), 0 4px 12px -2px rgba(0, 0, 0, 0.12) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.city-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 22px 42px -6px rgba(0, 0, 0, 0.3) !important;
+}
 .hide-scrollbar::-webkit-scrollbar {
     display: none !important;
 }
