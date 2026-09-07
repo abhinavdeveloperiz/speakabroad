@@ -101,13 +101,18 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 2.5rem;
-        align-items: center;
+        align-items: stretch;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         .exec-card-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
+            grid-template-columns: 440px 1fr;
+            gap: 4rem;
+            align-items: stretch;
+        }
+
+        .exec-card-grid.coo-layout {
+            grid-template-columns: 1fr 440px;
         }
     }
 
@@ -116,6 +121,8 @@
         width: 100%;
         max-width: 440px;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .exec-photo-box {
@@ -125,7 +132,7 @@
         border-radius: 1.75rem;
         overflow: hidden;
         background-color: #f1f5f9;
-        box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
     }
 
     @media (min-width: 640px) {
@@ -136,7 +143,8 @@
 
     @media (min-width: 1024px) {
         .exec-photo-box {
-            height: 480px;
+            height: 100%;
+            min-height: 470px;
         }
     }
 
@@ -149,11 +157,11 @@
     }
 
     .exec-photo-wrap:hover .exec-photo-box img {
-        transform: scale(1.04);
+        transform: scale(1.03);
     }
 
     .ceo-portrait {
-        object-position: center 9% !important;
+        object-position: center 10% !important;
     }
 
     .coo-portrait {
@@ -163,8 +171,8 @@
     .exec-glow-blue {
         position: absolute;
         inset: -10px;
-        background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.22), transparent 70%),
-                    radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.18), transparent 70%);
+        background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.2), transparent 70%),
+                    radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.16), transparent 70%);
         border-radius: 2rem;
         filter: blur(14px);
         pointer-events: none;
@@ -173,17 +181,139 @@
     .exec-glow-pink {
         position: absolute;
         inset: -10px;
-        background: radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.22), transparent 70%),
-                    radial-gradient(circle at 70% 70%, rgba(37, 99, 235, 0.18), transparent 70%);
+        background: radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.2), transparent 70%),
+                    radial-gradient(circle at 70% 70%, rgba(37, 99, 235, 0.16), transparent 70%);
         border-radius: 2rem;
         filter: blur(14px);
         pointer-events: none;
     }
+
+    .exec-content-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0.25rem 0;
+    }
+
+    .exec-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.875rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        background-color: #22c55e;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        margin-bottom: 1rem;
+    }
+
+    .exec-heading {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.025em;
+        color: #111827;
+        margin-bottom: 1.25rem;
+    }
+
+    @media (min-width: 1024px) {
+        .exec-heading {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    .exec-paragraph {
+        color: #4b5563;
+        line-height: 1.625;
+        text-align: justify;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+        .exec-paragraph {
+            font-size: 0.95rem;
+            line-height: 1.68;
+        }
+    }
+
+    .exec-footer-stats {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(229, 231, 235, 0.9);
+        margin-top: auto;
+    }
+
+    .exec-stat-num {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 800;
+        color: #2563eb;
+        letter-spacing: -0.025em;
+    }
+
+    @media (min-width: 1024px) {
+        .exec-stat-num {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+    }
+
+    .exec-stat-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #6b7280;
+        margin-top: 0.25rem;
+    }
+
+    .exec-footer-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: auto;
+        padding-top: 1.25rem;
+        border-top: 1px solid rgba(229, 231, 235, 0.9);
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    .exec-footer-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        color: #374151;
+        font-size: 0.9rem;
+    }
+
+    @media (min-width: 1024px) {
+        .exec-footer-features li {
+            font-size: 0.95rem;
+        }
+    }
+
+    .exec-check-icon {
+        color: #22c55e;
+        font-weight: 800;
+        font-size: 1.05rem;
+        line-height: 1;
+        flex-shrink: 0;
+    }
 </style>
 
 <!-- CEO SECTION -->
-<section class="py-20 md:py-28 bg-gradient-to-b from-white to-sky-100/50">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="py-16 md:py-24 bg-gradient-to-b from-white to-sky-100/50">
+    <div class="max-w-6xl mx-auto px-6">
 
         <div class="exec-card-grid">
 
@@ -198,40 +328,42 @@
             </div>
 
             <!-- CONTENT -->
-            <div class="flex flex-col justify-center">
+            <div class="exec-content-col">
                 <div>
-                    <span class="inline-block text-xs font-bold uppercase tracking-wider text-white bg-green-500 px-3.5 py-1 rounded-full mb-4 shadow-sm">
-                        CEO
-                    </span>
+                    <div>
+                        <span class="exec-badge">
+                            CEO
+                        </span>
+                    </div>
+
+                    <h2 class="exec-heading">
+                        SHAN SAINULABDHEEN
+                    </h2>
+
+                    <p class="exec-paragraph">
+                        My mission is to lead with purpose and ensure that every student is empowered to pursue global
+                        education with clarity and confidence. We are committed to delivering reliable, personalized
+                        guidance that aligns each student’s ambitions with the right international opportunities.
+                    </p>
+
+                    <p class="exec-paragraph">
+                        By upholding the highest standards of integrity, transparency, and excellence, we strive to create a
+                        system where aspirations are transformed into achievements. Our focus is not only on helping
+                        students reach universities abroad, but on preparing them to succeed, adapt, and thrive in a global
+                        environment.
+                    </p>
                 </div>
 
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5 tracking-tight">
-                    Shan sainulabdheen
-                </h2>
-
-                <p class="text-gray-600 leading-relaxed mb-4 text-justify text-sm md:text-base">
-                    My mission is to lead with purpose and ensure that every student is empowered to pursue global
-                    education with clarity and confidence. We are committed to delivering reliable, personalized
-                    guidance that aligns each student’s ambitions with the right international opportunities.
-                </p>
-
-                <p class="text-gray-600 leading-relaxed mb-6 text-justify text-sm md:text-base">
-                    By upholding the highest standards of integrity, transparency, and excellence, we strive to create a
-                    system where aspirations are transformed into achievements. Our focus is not only on helping
-                    students reach universities abroad, but on preparing them to succeed, adapt, and thrive in a global
-                    environment.
-                </p>
-
                 <!-- STATS -->
-                <div class="flex gap-10 pt-2 border-t border-gray-200/70">
+                <div class="exec-footer-stats">
                     <div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-blue-600">10+</h3>
-                        <p class="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wider mt-0.5">Years Experience</p>
+                        <div class="exec-stat-num">10+</div>
+                        <div class="exec-stat-label">Years Experience</div>
                     </div>
 
                     <div>
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-blue-600">500+</h3>
-                        <p class="text-xs md:text-sm font-medium text-gray-500 uppercase tracking-wider mt-0.5">Students Guided</p>
+                        <div class="exec-stat-num">500+</div>
+                        <div class="exec-stat-label">Students Guided</div>
                     </div>
                 </div>
             </div>
@@ -243,58 +375,63 @@
 
 
 <!-- COO SECTION -->
-<section class="py-20 md:py-28 bg-gradient-to-b from-sky-100/50 to-white">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="py-16 md:py-24 bg-gradient-to-b from-sky-100/50 to-white">
+    <div class="max-w-6xl mx-auto px-6">
 
-        <div class="exec-card-grid">
+        <div class="exec-card-grid coo-layout">
+
+            <!-- CONTENT (Left on desktop) -->
+            <div class="exec-content-col order-2 lg:order-1">
+                <div>
+                    <div>
+                        <span class="exec-badge">
+                            COO
+                        </span>
+                    </div>
+
+                    <h2 class="exec-heading">
+                        SHAHANA .S
+                    </h2>
+
+                    <p class="exec-paragraph">
+                        We envision a future in which every student aspiring to study abroad possesses the clarity, courage,
+                        and support necessary to achieve their objectives. Our goal is to assist aspirants in navigating
+                        past uncertainty and taking decisive steps toward global education.
+                    </p>
+
+                    <p class="exec-paragraph">
+                        By offering transparent guidance and practical direction, we aim to develop individuals who are not
+                        only academically prepared but also adaptable, independent, and equipped to succeed in an
+                        international environment. We believe every dream deserves an appropriate pathway—and we strive to
+                        help students identify theirs.
+                    </p>
+                </div>
+
+                <!-- FEATURES -->
+                <ul class="exec-footer-features">
+                    <li>
+                        <span class="exec-check-icon">✔</span>
+                        <span>Streamlined admission workflows</span>
+                    </li>
+                    <li>
+                        <span class="exec-check-icon">✔</span>
+                        <span>Strong university partnerships</span>
+                    </li>
+                    <li>
+                        <span class="exec-check-icon">✔</span>
+                        <span>End-to-end student support system</span>
+                    </li>
+                </ul>
+            </div>
 
             <!-- IMAGE (Right on desktop, first on mobile) -->
-            <div class="exec-photo-wrap md:order-2">
+            <div class="exec-photo-wrap order-1 lg:order-2">
                 <div class="exec-glow-pink"></div>
                 <div class="exec-photo-box">
                     <img src="{% if coo and coo.image %}{{ coo.image.url }}{% else %}/media/images/coo.JPEG{% endif %}"
                         alt="COO Shahana S"
                         class="coo-portrait">
                 </div>
-            </div>
-
-            <!-- CONTENT -->
-            <div class="flex flex-col justify-center md:order-1">
-                <div>
-                    <span class="inline-block text-xs font-bold uppercase tracking-wider text-white bg-green-500 px-3.5 py-1 rounded-full mb-4 shadow-sm">
-                        COO
-                    </span>
-                </div>
-
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5 tracking-tight">
-                    Shahana .S
-                </h2>
-
-                <p class="text-gray-600 leading-relaxed mb-4 text-justify text-sm md:text-base">
-                    We envision a future in which every student aspiring to study abroad possesses the clarity, courage,
-                    and support necessary to achieve their objectives. Our goal is to assist aspirants in navigating
-                    past uncertainty and taking decisive steps toward global education.
-                </p>
-
-                <p class="text-gray-600 leading-relaxed mb-6 text-justify text-sm md:text-base">
-                    By offering transparent guidance and practical direction, we aim to develop individuals who are not
-                    only academically prepared but also adaptable, independent, and equipped to succeed in an
-                    international environment. We believe every dream deserves an appropriate pathway—and we strive to
-                    help students identify theirs.
-                </p>
-
-                <!-- FEATURES -->
-                <ul class="space-y-2.5 text-gray-700 text-sm md:text-base pt-2 border-t border-gray-200/70">
-                    <li class="flex items-center gap-2">
-                        <span class="text-green-500 font-bold">✔</span> Streamlined admission workflows
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-green-500 font-bold">✔</span> Strong university partnerships
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <span class="text-green-500 font-bold">✔</span> End-to-end student support system
-                    </li>
-                </ul>
             </div>
 
         </div>
