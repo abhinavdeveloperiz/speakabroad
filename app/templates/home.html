@@ -8,8 +8,12 @@
 <section class="relative h-[60vh] md:h-[74vh] flex items-center justify-center text-center text-white overflow-hidden">
 
     <!-- VIDEO BACKGROUND -->
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-        <source src="{{ banner.video.url }}" type="video/mp4" loading="lazy">
+    <video autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+        {% if banner.video %}
+        <source src="{{ banner.video.url }}" type="video/mp4">
+        {% endif %}
+        <source src="/media/videos/REEL_ladscape.mp4" type="video/mp4">
+        <source src="/media/videos/banner.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
