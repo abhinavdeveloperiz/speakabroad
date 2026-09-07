@@ -71,58 +71,207 @@
 
 
 
-<!-- TOP STUDY CITIES -->
+<!-- TOP STUDY CITIES IN INDIA -->
+<section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
 
-<section class="py-20 bg-gray-50">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-
-        <div class="mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-500">
+        <!-- HEADING -->
+        <div class="mb-8 md:mb-10 text-left">
+            <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wide text-blue-600">
                 Top Study Cities in India
             </h2>
-
         </div>
 
-        <div class="flex gap-6 overflow-x-auto pb-6 scroll-smooth" data-aos="slide-left">
-            {% for dest in destinations %}
-            <div class="min-w-[280px] h-[420px] relative rounded-xl overflow-hidden shadow-xl group">
+        <!-- CITIES CAROUSEL -->
+        <div class="relative">
+            <!-- SCROLL CONTAINER -->
+            <div id="citiesScrollContainer"
+                class="flex gap-6 overflow-x-auto scroll-smooth pb-4 hide-scrollbar select-none"
+                style="scrollbar-width: none; -ms-overflow-style: none;">
+                {% for dest in destinations %}
+                <div class="flex-shrink-0 w-[280px] md:w-[285px] h-[440px] md:h-[450px] relative rounded-[22px] overflow-hidden shadow-xl group cursor-pointer transition-all duration-300 hover:shadow-2xl">
 
-                {% if dest.image %}
-                <img src="{{ dest.image.url }}"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                {% else %}
-                <img src="{% static 'images/enterprice.avif' %}"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                {% endif %}
+                    <!-- Background Image -->
+                    {% if dest.image %}
+                    <img src="{{ dest.image.url }}" alt="{{ dest.title }}"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        draggable="false">
+                    {% else %}
+                    <img src="{% static 'images/enterprice.avif' %}" alt="{{ dest.title }}"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        draggable="false">
+                    {% endif %}
 
-                <div class="absolute inset-0 bg-black/40"></div>
+                    <!-- Gradient Overlay (keeps top natural & bright, darkens bottom for text contrast) -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-40% to-transparent to-75% pointer-events-none"></div>
 
-                <div class="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                    <!-- Content (Title & Bullet Highlights) -->
+                    <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col justify-end text-white pointer-events-none">
+                        <h3 class="font-extrabold text-[22px] md:text-[24px] uppercase tracking-wider text-white mb-2.5 leading-tight drop-shadow-md">
+                            {{ dest.title }}
+                        </h3>
 
-                    <h3 class="text-2xl font-semibold mb-2">
-                        {{ dest.title }}
-                    </h3>
-
-                    <ul class="text-sm space-y-1">
-                        {% if dest.highlight1 %}<li>• {{ dest.highlight1 }}</li>{% endif %}
-                        {% if dest.highlight2 %}<li>• {{ dest.highlight2 }}</li>{% endif %}
-                        {% if dest.highlight3 %}<li>• {{ dest.highlight3 }}</li>{% endif %}
-                        {% if dest.highlight4 %}<li>• {{ dest.highlight4 }}</li>{% endif %}
-                        {% if dest.highlight5 %}<li>• {{ dest.highlight5 }}</li>{% endif %}
-                    </ul>
-
+                        <ul class="space-y-1.5 text-white/95 text-[11.5px] md:text-[12px] leading-snug drop-shadow font-normal">
+                            {% if dest.highlight1 %}<li>• {{ dest.highlight1 }}</li>{% endif %}
+                            {% if dest.highlight2 %}<li>• {{ dest.highlight2 }}</li>{% endif %}
+                            {% if dest.highlight3 %}<li>• {{ dest.highlight3 }}</li>{% endif %}
+                            {% if dest.highlight4 %}<li>• {{ dest.highlight4 }}</li>{% endif %}
+                            {% if dest.highlight5 %}<li>• {{ dest.highlight5 }}</li>{% endif %}
+                        </ul>
+                    </div>
                 </div>
+                {% empty %}
+                <p class="text-gray-500 py-8">No destinations available right now.</p>
+                {% endfor %}
             </div>
-            {% empty %}
-            <p class="text-gray-600">No destinations available right now.</p>
-            {% endfor %}
+
+            <!-- CUSTOM HORIZONTAL SCROLLBAR CONTROLS (Screenshot Style) -->
+            <div class="mt-4 flex items-center justify-between gap-3 max-w-full px-1">
+                <!-- Left arrow button -->
+                <button id="cityPrevBtn" aria-label="Scroll left"
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-900 transition text-sm cursor-pointer select-none">
+                    &#9664;
+                </button>
+
+                <!-- Scroll track & thumb -->
+                <div id="cityScrollTrack" class="flex-1 h-2 bg-gray-200 rounded-full relative cursor-pointer overflow-hidden">
+                    <div id="cityScrollThumb"
+                        class="h-full bg-gray-500 hover:bg-gray-600 rounded-full absolute left-0 top-0 transition-all duration-75"
+                        style="width: 30%;"></div>
+                </div>
+
+                <!-- Right arrow button -->
+                <button id="cityNextBtn" aria-label="Scroll right"
+                    class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-900 transition text-sm cursor-pointer select-none">
+                    &#9654;
+                </button>
+            </div>
         </div>
 
     </div>
-
 </section>
+
+<style>
+.hide-scrollbar::-webkit-scrollbar {
+    display: none !important;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+</style>
+
+<script>
+(function () {
+    function initCitiesCarousel() {
+        const container = document.getElementById('citiesScrollContainer');
+        const prevBtn = document.getElementById('cityPrevBtn');
+        const nextBtn = document.getElementById('cityNextBtn');
+        const track = document.getElementById('cityScrollTrack');
+        const thumb = document.getElementById('cityScrollThumb');
+
+        if (!container || !thumb || !track) return;
+
+        function updateThumb() {
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            if (maxScroll <= 0) {
+                thumb.style.width = '100%';
+                thumb.style.left = '0%';
+                return;
+            }
+            const scrollRatio = container.clientWidth / container.scrollWidth;
+            const thumbWidthPercent = Math.max(scrollRatio * 100, 18);
+            const scrollPercent = (container.scrollLeft / maxScroll) * (100 - thumbWidthPercent);
+            thumb.style.width = thumbWidthPercent + '%';
+            thumb.style.left = Math.min(Math.max(scrollPercent, 0), 100 - thumbWidthPercent) + '%';
+        }
+
+        container.addEventListener('scroll', updateThumb, { passive: true });
+        window.addEventListener('resize', updateThumb);
+        setTimeout(updateThumb, 100);
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                container.scrollBy({ left: -310, behavior: 'smooth' });
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                container.scrollBy({ left: 310, behavior: 'smooth' });
+            });
+        }
+
+        // Track click to jump
+        track.addEventListener('click', (e) => {
+            if (e.target === thumb) return;
+            const rect = track.getBoundingClientRect();
+            const clickPos = (e.clientX - rect.left) / rect.width;
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            container.scrollTo({ left: clickPos * maxScroll, behavior: 'smooth' });
+        });
+
+        // Dragging the thumb
+        let isDragging = false;
+        let startX = 0;
+        let startScrollLeft = 0;
+
+        thumb.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startScrollLeft = container.scrollLeft;
+            document.body.style.userSelect = 'none';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const trackRect = track.getBoundingClientRect();
+            const deltaX = e.clientX - startX;
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
+            if (trackAvailableWidth > 0) {
+                const scrollRatio = maxScroll / trackAvailableWidth;
+                container.scrollLeft = startScrollLeft + deltaX * scrollRatio;
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                document.body.style.userSelect = '';
+            }
+        });
+
+        // Touch support for thumb
+        thumb.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+            startScrollLeft = container.scrollLeft;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const trackRect = track.getBoundingClientRect();
+            const deltaX = e.touches[0].clientX - startX;
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
+            if (trackAvailableWidth > 0) {
+                const scrollRatio = maxScroll / trackAvailableWidth;
+                container.scrollLeft = startScrollLeft + deltaX * scrollRatio;
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCitiesCarousel);
+    } else {
+        initCitiesCarousel();
+    }
+})();
+</script>
 
 
 
