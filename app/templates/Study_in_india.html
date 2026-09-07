@@ -42,7 +42,7 @@
         <div>
 
             <h2 class="text-3xl font-bold text-primary mb-6">
-                Study in India with SpeakAbroad
+                Study in India with Speakabroad
             </h2>
 
             <p class="text-gray-600 mb-6 text-justify">
@@ -53,7 +53,7 @@
             </p>
 
             <p class="text-gray-600 mb-6 text-justify">
-                SpeakAbroad helps students choose the right institution, complete admissions,
+                Speakabroad helps students choose the right institution, complete admissions,
                 and navigate the entire process smoothly. We ensure students get the best
                 academic exposure with strong career prospects.
             </p>
@@ -90,7 +90,7 @@
                 style="scrollbar-width: none; -ms-overflow-style: none; min-height: 460px;">
                 {% for dest in destinations %}
                 <div class="city-card flex-shrink-0 relative rounded-[22px] overflow-hidden shadow-xl group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 snap-start"
-                     style="width: 285px; min-width: 285px; height: 450px; min-height: 450px; border-radius: 22px;">
+                    style="width: 285px; min-width: 285px; height: 450px; min-height: 450px; border-radius: 22px;">
 
                     <!-- Background Image -->
                     {% if dest.image %}
@@ -104,42 +104,52 @@
                     {% endif %}
 
                     <!-- Guaranteed High-Contrast Gradient Overlay (bright top, deep dark bottom for crisp readability) -->
-                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.88) 35%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.12) 80%, transparent 100%); pointer-events: none; z-index: 5;"></div>
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.88) 35%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.12) 80%, transparent 100%); pointer-events: none; z-index: 5;">
+                    </div>
 
                     <!-- Content (Title & Bullet Highlights) -->
-                    <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 20px; z-index: 10; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end;">
-                        <h3 style="font-size: 24px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #ffffff; margin: 0 0 10px 0; line-height: 1.2; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95);">
+                    <div
+                        style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px 20px; z-index: 10; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h3
+                            style="font-size: 24px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #ffffff; margin: 0 0 10px 0; line-height: 1.2; text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95);">
                             {{ dest.title }}
                         </h3>
 
-                        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; line-height: 1.35; color: rgba(255, 255, 255, 0.95); font-weight: 400; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);">
+                        <ul
+                            style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; line-height: 1.35; color: rgba(255, 255, 255, 0.95); font-weight: 400; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);">
                             {% if dest.highlight1 %}
                             <li style="display: flex; align-items: flex-start; gap: 7px;">
-                                <span style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
+                                <span
+                                    style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
                                 <span>{{ dest.highlight1 }}</span>
                             </li>
                             {% endif %}
                             {% if dest.highlight2 %}
                             <li style="display: flex; align-items: flex-start; gap: 7px;">
-                                <span style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
+                                <span
+                                    style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
                                 <span>{{ dest.highlight2 }}</span>
                             </li>
                             {% endif %}
                             {% if dest.highlight3 %}
                             <li style="display: flex; align-items: flex-start; gap: 7px;">
-                                <span style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
+                                <span
+                                    style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
                                 <span>{{ dest.highlight3 }}</span>
                             </li>
                             {% endif %}
                             {% if dest.highlight4 %}
                             <li style="display: flex; align-items: flex-start; gap: 7px;">
-                                <span style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
+                                <span
+                                    style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
                                 <span>{{ dest.highlight4 }}</span>
                             </li>
                             {% endif %}
                             {% if dest.highlight5 %}
                             <li style="display: flex; align-items: flex-start; gap: 7px;">
-                                <span style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
+                                <span
+                                    style="color: #60a5fa; font-size: 13px; line-height: 1.2; flex-shrink: 0; font-weight: bold;">•</span>
                                 <span>{{ dest.highlight5 }}</span>
                             </li>
                             {% endif %}
@@ -162,9 +172,11 @@
                 </button>
 
                 <!-- Scroll track & thumb -->
-                <div id="cityScrollTrack" style="flex: 1; height: 8px; background: #e5e7eb; border-radius: 9999px; position: relative; cursor: pointer; overflow: hidden;">
+                <div id="cityScrollTrack"
+                    style="flex: 1; height: 8px; background: #e5e7eb; border-radius: 9999px; position: relative; cursor: pointer; overflow: hidden;">
                     <div id="cityScrollThumb"
-                        style="height: 100%; width: 30%; background: #4b5563; border-radius: 9999px; position: absolute; left: 0; top: 0; transition: left 0.1s ease; cursor: grab;"></div>
+                        style="height: 100%; width: 30%; background: #4b5563; border-radius: 9999px; position: absolute; left: 0; top: 0; transition: left 0.1s ease; cursor: grab;">
+                    </div>
                 </div>
 
                 <!-- Right arrow button -->
@@ -181,208 +193,215 @@
 </section>
 
 <style>
-.cities-carousel {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding-bottom: 20px;
-    min-height: 460px;
-    cursor: grab;
-    user-select: none;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-.cities-carousel:active {
-    cursor: grabbing;
-}
-.cities-carousel::-webkit-scrollbar {
-    display: none !important;
-}
-.city-card {
-    width: 285px !important;
-    min-width: 285px !important;
-    height: 450px !important;
-    min-height: 450px !important;
-    border-radius: 22px !important;
-    position: relative !important;
-    flex-shrink: 0 !important;
-    overflow: hidden !important;
-    scroll-snap-align: start !important;
-    box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.22), 0 4px 12px -2px rgba(0, 0, 0, 0.12) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-}
-.city-card:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 22px 42px -6px rgba(0, 0, 0, 0.3) !important;
-}
-@media (max-width: 360px) {
-    .city-card {
-        width: 260px !important;
-        min-width: 260px !important;
-        height: 420px !important;
-        min-height: 420px !important;
+    .cities-carousel {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 20px;
+        min-height: 460px;
+        cursor: grab;
+        user-select: none;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
-}
-.hide-scrollbar::-webkit-scrollbar {
-    display: none !important;
-}
-.hide-scrollbar {
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
-}
+
+    .cities-carousel:active {
+        cursor: grabbing;
+    }
+
+    .cities-carousel::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .city-card {
+        width: 285px !important;
+        min-width: 285px !important;
+        height: 450px !important;
+        min-height: 450px !important;
+        border-radius: 22px !important;
+        position: relative !important;
+        flex-shrink: 0 !important;
+        overflow: hidden !important;
+        scroll-snap-align: start !important;
+        box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.22), 0 4px 12px -2px rgba(0, 0, 0, 0.12) !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .city-card:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 22px 42px -6px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    @media (max-width: 360px) {
+        .city-card {
+            width: 260px !important;
+            min-width: 260px !important;
+            height: 420px !important;
+            min-height: 420px !important;
+        }
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .hide-scrollbar {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+    }
 </style>
 
 <script>
-(function () {
-    function initCitiesCarousel() {
-        const container = document.getElementById('citiesScrollContainer');
-        const prevBtn = document.getElementById('cityPrevBtn');
-        const nextBtn = document.getElementById('cityNextBtn');
-        const track = document.getElementById('cityScrollTrack');
-        const thumb = document.getElementById('cityScrollThumb');
+    (function () {
+        function initCitiesCarousel() {
+            const container = document.getElementById('citiesScrollContainer');
+            const prevBtn = document.getElementById('cityPrevBtn');
+            const nextBtn = document.getElementById('cityNextBtn');
+            const track = document.getElementById('cityScrollTrack');
+            const thumb = document.getElementById('cityScrollThumb');
 
-        if (!container || !thumb || !track) return;
+            if (!container || !thumb || !track) return;
 
-        function updateThumb() {
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            if (maxScroll <= 0) {
-                thumb.style.width = '100%';
-                thumb.style.left = '0%';
-                return;
+            function updateThumb() {
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                if (maxScroll <= 0) {
+                    thumb.style.width = '100%';
+                    thumb.style.left = '0%';
+                    return;
+                }
+
+                const scrollRatio = container.clientWidth / container.scrollWidth;
+                const thumbWidthPercent = Math.max(scrollRatio * 100, 18);
+                const scrollPercent = (container.scrollLeft / maxScroll) * (100 - thumbWidthPercent);
+                thumb.style.width = thumbWidthPercent + '%';
+                thumb.style.left = Math.min(Math.max(scrollPercent, 0), 100 - thumbWidthPercent) + '%';
             }
 
-            const scrollRatio = container.clientWidth / container.scrollWidth;
-            const thumbWidthPercent = Math.max(scrollRatio * 100, 18);
-            const scrollPercent = (container.scrollLeft / maxScroll) * (100 - thumbWidthPercent);
-            thumb.style.width = thumbWidthPercent + '%';
-            thumb.style.left = Math.min(Math.max(scrollPercent, 0), 100 - thumbWidthPercent) + '%';
-        }
+            container.addEventListener('scroll', updateThumb, { passive: true });
+            window.addEventListener('resize', updateThumb);
+            setTimeout(updateThumb, 100);
 
-        container.addEventListener('scroll', updateThumb, { passive: true });
-        window.addEventListener('resize', updateThumb);
-        setTimeout(updateThumb, 100);
+            const scrollStep = () => Math.max(container.clientWidth * 0.75, 310);
 
-        const scrollStep = () => Math.max(container.clientWidth * 0.75, 310);
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: scrollStep(), behavior: 'smooth' });
+                });
+            }
 
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                container.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
+            // Track click to jump
+            track.addEventListener('click', (e) => {
+                if (e.target === thumb) return;
+                const rect = track.getBoundingClientRect();
+                const clickPos = (e.clientX - rect.left) / rect.width;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                container.scrollTo({ left: clickPos * maxScroll, behavior: 'smooth' });
             });
-        }
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                container.scrollBy({ left: scrollStep(), behavior: 'smooth' });
+
+            // Mouse Wheel: Translate vertical wheel scroll to horizontal scrolling when hovered
+            container.addEventListener('wheel', (e) => {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                    e.preventDefault();
+                    container.scrollLeft += e.deltaY * 1.1;
+                }
+            }, { passive: false });
+
+            // Grab & Drag to scroll for container
+            let isContainerDragging = false;
+            let containerStartX = 0;
+            let containerScrollLeft = 0;
+
+            container.addEventListener('mousedown', (e) => {
+                isContainerDragging = true;
+                containerStartX = e.pageX - container.offsetLeft;
+                containerScrollLeft = container.scrollLeft;
+                container.style.scrollBehavior = 'auto';
             });
-        }
 
-        // Track click to jump
-        track.addEventListener('click', (e) => {
-            if (e.target === thumb) return;
-            const rect = track.getBoundingClientRect();
-            const clickPos = (e.clientX - rect.left) / rect.width;
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            container.scrollTo({ left: clickPos * maxScroll, behavior: 'smooth' });
-        });
-
-        // Mouse Wheel: Translate vertical wheel scroll to horizontal scrolling when hovered
-        container.addEventListener('wheel', (e) => {
-            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            window.addEventListener('mousemove', (e) => {
+                if (!isContainerDragging) return;
                 e.preventDefault();
-                container.scrollLeft += e.deltaY * 1.1;
-            }
-        }, { passive: false });
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - containerStartX) * 1.4;
+                container.scrollLeft = containerScrollLeft - walk;
+            });
 
-        // Grab & Drag to scroll for container
-        let isContainerDragging = false;
-        let containerStartX = 0;
-        let containerScrollLeft = 0;
+            window.addEventListener('mouseup', () => {
+                if (isContainerDragging) {
+                    isContainerDragging = false;
+                    container.style.scrollBehavior = 'smooth';
+                }
+            });
 
-        container.addEventListener('mousedown', (e) => {
-            isContainerDragging = true;
-            containerStartX = e.pageX - container.offsetLeft;
-            containerScrollLeft = container.scrollLeft;
-            container.style.scrollBehavior = 'auto';
-        });
+            // Dragging the thumb directly
+            let isThumbDragging = false;
+            let thumbStartX = 0;
+            let thumbStartScroll = 0;
 
-        window.addEventListener('mousemove', (e) => {
-            if (!isContainerDragging) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - containerStartX) * 1.4;
-            container.scrollLeft = containerScrollLeft - walk;
-        });
+            thumb.addEventListener('mousedown', (e) => {
+                e.stopPropagation();
+                isThumbDragging = true;
+                thumbStartX = e.clientX;
+                thumbStartScroll = container.scrollLeft;
+                document.body.style.userSelect = 'none';
+            });
 
-        window.addEventListener('mouseup', () => {
-            if (isContainerDragging) {
-                isContainerDragging = false;
-                container.style.scrollBehavior = 'smooth';
-            }
-        });
+            window.addEventListener('mousemove', (e) => {
+                if (!isThumbDragging) return;
+                const trackRect = track.getBoundingClientRect();
+                const deltaX = e.clientX - thumbStartX;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
+                if (trackAvailableWidth > 0) {
+                    const scrollRatio = maxScroll / trackAvailableWidth;
+                    container.scrollLeft = thumbStartScroll + deltaX * scrollRatio;
+                }
+            });
 
-        // Dragging the thumb directly
-        let isThumbDragging = false;
-        let thumbStartX = 0;
-        let thumbStartScroll = 0;
+            window.addEventListener('mouseup', () => {
+                if (isThumbDragging) {
+                    isThumbDragging = false;
+                    document.body.style.userSelect = '';
+                }
+            });
 
-        thumb.addEventListener('mousedown', (e) => {
-            e.stopPropagation();
-            isThumbDragging = true;
-            thumbStartX = e.clientX;
-            thumbStartScroll = container.scrollLeft;
-            document.body.style.userSelect = 'none';
-        });
+            // Touch support for thumb
+            thumb.addEventListener('touchstart', (e) => {
+                isThumbDragging = true;
+                thumbStartX = e.touches[0].clientX;
+                thumbStartScroll = container.scrollLeft;
+            }, { passive: true });
 
-        window.addEventListener('mousemove', (e) => {
-            if (!isThumbDragging) return;
-            const trackRect = track.getBoundingClientRect();
-            const deltaX = e.clientX - thumbStartX;
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
-            if (trackAvailableWidth > 0) {
-                const scrollRatio = maxScroll / trackAvailableWidth;
-                container.scrollLeft = thumbStartScroll + deltaX * scrollRatio;
-            }
-        });
+            window.addEventListener('touchmove', (e) => {
+                if (!isThumbDragging) return;
+                const trackRect = track.getBoundingClientRect();
+                const deltaX = e.touches[0].clientX - thumbStartX;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
+                if (trackAvailableWidth > 0) {
+                    const scrollRatio = maxScroll / trackAvailableWidth;
+                    container.scrollLeft = thumbStartScroll + deltaX * scrollRatio;
+                }
+            }, { passive: true });
 
-        window.addEventListener('mouseup', () => {
-            if (isThumbDragging) {
+            window.addEventListener('touchend', () => {
                 isThumbDragging = false;
-                document.body.style.userSelect = '';
-            }
-        });
+            });
+        }
 
-        // Touch support for thumb
-        thumb.addEventListener('touchstart', (e) => {
-            isThumbDragging = true;
-            thumbStartX = e.touches[0].clientX;
-            thumbStartScroll = container.scrollLeft;
-        }, { passive: true });
-
-        window.addEventListener('touchmove', (e) => {
-            if (!isThumbDragging) return;
-            const trackRect = track.getBoundingClientRect();
-            const deltaX = e.touches[0].clientX - thumbStartX;
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
-            if (trackAvailableWidth > 0) {
-                const scrollRatio = maxScroll / trackAvailableWidth;
-                container.scrollLeft = thumbStartScroll + deltaX * scrollRatio;
-            }
-        }, { passive: true });
-
-        window.addEventListener('touchend', () => {
-            isThumbDragging = false;
-        });
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initCitiesCarousel);
-    } else {
-        initCitiesCarousel();
-    }
-})();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCitiesCarousel);
+        } else {
+            initCitiesCarousel();
+        }
+    })();
 </script>
 
 
@@ -557,7 +576,7 @@
     <div class="max-w-7xl mx-auto px-6 text-center">
 
         <h2 class="text-2xl md:text-3xl font-bold mb-10">
-            Why Choose SpeakAbroad
+            Why Choose Speakabroad
         </h2>
 
         <div class="grid md:grid-cols-3 gap-8">
