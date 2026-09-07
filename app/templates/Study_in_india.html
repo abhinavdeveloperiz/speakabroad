@@ -83,13 +83,23 @@
         </div>
 
         <!-- CITIES CAROUSEL -->
-        <div class="relative">
+        <div class="relative group/carousel">
+            <!-- Floating Side Navigation Arrows -->
+            <button id="floatPrevBtn" aria-label="Previous city"
+                class="absolute -left-2 md:-left-5 top-[220px] -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-gray-800 hover:text-blue-600 shadow-2xl border border-gray-200/80 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer select-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button id="floatNextBtn" aria-label="Next city"
+                class="absolute -right-2 md:-right-5 top-[220px] -translate-y-1/2 z-20 w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/95 hover:bg-white text-gray-800 hover:text-blue-600 shadow-2xl border border-gray-200/80 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer select-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
             <!-- SCROLL CONTAINER -->
             <div id="citiesScrollContainer"
-                class="flex gap-6 overflow-x-auto scroll-smooth pb-4 hide-scrollbar select-none"
+                class="flex gap-6 overflow-x-auto scroll-smooth pb-5 hide-scrollbar select-none cursor-grab active:cursor-grabbing snap-x snap-mandatory"
                 style="scrollbar-width: none; -ms-overflow-style: none;">
                 {% for dest in destinations %}
-                <div class="flex-shrink-0 w-[280px] md:w-[285px] h-[440px] md:h-[450px] relative rounded-[22px] overflow-hidden shadow-xl group cursor-pointer transition-all duration-300 hover:shadow-2xl">
+                <div class="flex-shrink-0 w-[280px] md:w-[290px] h-[450px] md:h-[460px] relative rounded-[22px] overflow-hidden shadow-xl group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 snap-start">
 
                     <!-- Background Image -->
                     {% if dest.image %}
@@ -102,21 +112,46 @@
                         draggable="false">
                     {% endif %}
 
-                    <!-- Gradient Overlay (keeps top natural & bright, darkens bottom for text contrast) -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 via-40% to-transparent to-75% pointer-events-none"></div>
+                    <!-- Enhanced Gradient Overlay: crystal-clear top landmark, deep high-contrast text backing -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/98 via-black/85 via-35% via-black/45 via-60% via-black/10 via-75% to-transparent pointer-events-none"></div>
 
                     <!-- Content (Title & Bullet Highlights) -->
                     <div class="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col justify-end text-white pointer-events-none">
-                        <h3 class="font-extrabold text-[22px] md:text-[24px] uppercase tracking-wider text-white mb-2.5 leading-tight drop-shadow-md">
+                        <h3 class="font-extrabold text-[22px] md:text-[24px] uppercase tracking-wider text-white mb-3 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
                             {{ dest.title }}
                         </h3>
 
-                        <ul class="space-y-1.5 text-white/95 text-[11.5px] md:text-[12px] leading-snug drop-shadow font-normal">
-                            {% if dest.highlight1 %}<li>• {{ dest.highlight1 }}</li>{% endif %}
-                            {% if dest.highlight2 %}<li>• {{ dest.highlight2 }}</li>{% endif %}
-                            {% if dest.highlight3 %}<li>• {{ dest.highlight3 }}</li>{% endif %}
-                            {% if dest.highlight4 %}<li>• {{ dest.highlight4 }}</li>{% endif %}
-                            {% if dest.highlight5 %}<li>• {{ dest.highlight5 }}</li>{% endif %}
+                        <ul class="space-y-2 text-white/95 text-[12px] md:text-[12.5px] leading-snug font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                            {% if dest.highlight1 %}
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 text-sm leading-none font-black select-none">•</span>
+                                <span>{{ dest.highlight1 }}</span>
+                            </li>
+                            {% endif %}
+                            {% if dest.highlight2 %}
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 text-sm leading-none font-black select-none">•</span>
+                                <span>{{ dest.highlight2 }}</span>
+                            </li>
+                            {% endif %}
+                            {% if dest.highlight3 %}
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 text-sm leading-none font-black select-none">•</span>
+                                <span>{{ dest.highlight3 }}</span>
+                            </li>
+                            {% endif %}
+                            {% if dest.highlight4 %}
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 text-sm leading-none font-black select-none">•</span>
+                                <span>{{ dest.highlight4 }}</span>
+                            </li>
+                            {% endif %}
+                            {% if dest.highlight5 %}
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 text-sm leading-none font-black select-none">•</span>
+                                <span>{{ dest.highlight5 }}</span>
+                            </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -129,20 +164,20 @@
             <div class="mt-4 flex items-center justify-between gap-3 max-w-full px-1">
                 <!-- Left arrow button -->
                 <button id="cityPrevBtn" aria-label="Scroll left"
-                    class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-900 transition text-sm cursor-pointer select-none">
+                    class="w-7 h-7 flex items-center justify-center text-gray-400 hover:text-blue-600 transition text-sm cursor-pointer select-none rounded hover:bg-blue-50 active:scale-90">
                     &#9664;
                 </button>
 
                 <!-- Scroll track & thumb -->
-                <div id="cityScrollTrack" class="flex-1 h-2 bg-gray-200 rounded-full relative cursor-pointer overflow-hidden">
+                <div id="cityScrollTrack" class="flex-1 h-2 md:h-2.5 bg-gray-200 hover:bg-gray-300 rounded-full relative cursor-pointer overflow-hidden transition-colors">
                     <div id="cityScrollThumb"
-                        class="h-full bg-gray-500 hover:bg-gray-600 rounded-full absolute left-0 top-0 transition-all duration-75"
+                        class="h-full bg-gray-600 hover:bg-blue-600 rounded-full absolute left-0 top-0 transition-all duration-75 cursor-grab active:cursor-grabbing"
                         style="width: 30%;"></div>
                 </div>
 
                 <!-- Right arrow button -->
                 <button id="cityNextBtn" aria-label="Scroll right"
-                    class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-900 transition text-sm cursor-pointer select-none">
+                    class="w-7 h-7 flex items-center justify-center text-gray-400 hover:text-blue-600 transition text-sm cursor-pointer select-none rounded hover:bg-blue-50 active:scale-90">
                     &#9654;
                 </button>
             </div>
@@ -167,6 +202,8 @@
         const container = document.getElementById('citiesScrollContainer');
         const prevBtn = document.getElementById('cityPrevBtn');
         const nextBtn = document.getElementById('cityNextBtn');
+        const floatPrevBtn = document.getElementById('floatPrevBtn');
+        const floatNextBtn = document.getElementById('floatNextBtn');
         const track = document.getElementById('cityScrollTrack');
         const thumb = document.getElementById('cityScrollThumb');
 
@@ -177,29 +214,41 @@
             if (maxScroll <= 0) {
                 thumb.style.width = '100%';
                 thumb.style.left = '0%';
+                if (floatPrevBtn) floatPrevBtn.style.display = 'none';
+                if (floatNextBtn) floatNextBtn.style.display = 'none';
                 return;
             }
+            if (floatPrevBtn) floatPrevBtn.style.display = 'flex';
+            if (floatNextBtn) floatNextBtn.style.display = 'flex';
+
             const scrollRatio = container.clientWidth / container.scrollWidth;
             const thumbWidthPercent = Math.max(scrollRatio * 100, 18);
             const scrollPercent = (container.scrollLeft / maxScroll) * (100 - thumbWidthPercent);
             thumb.style.width = thumbWidthPercent + '%';
             thumb.style.left = Math.min(Math.max(scrollPercent, 0), 100 - thumbWidthPercent) + '%';
+
+            // Dimmable state for edge arrows
+            if (floatPrevBtn) floatPrevBtn.style.opacity = container.scrollLeft <= 5 ? '0.35' : '1';
+            if (floatNextBtn) floatNextBtn.style.opacity = container.scrollLeft >= maxScroll - 5 ? '0.35' : '1';
         }
 
         container.addEventListener('scroll', updateThumb, { passive: true });
         window.addEventListener('resize', updateThumb);
         setTimeout(updateThumb, 100);
 
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                container.scrollBy({ left: -310, behavior: 'smooth' });
-            });
-        }
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                container.scrollBy({ left: 310, behavior: 'smooth' });
-            });
-        }
+        const scrollStep = () => Math.max(container.clientWidth * 0.75, 310);
+
+        const scrollLeft = () => {
+            container.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
+        };
+        const scrollRight = () => {
+            container.scrollBy({ left: scrollStep(), behavior: 'smooth' });
+        };
+
+        if (prevBtn) prevBtn.addEventListener('click', scrollLeft);
+        if (nextBtn) nextBtn.addEventListener('click', scrollRight);
+        if (floatPrevBtn) floatPrevBtn.addEventListener('click', scrollLeft);
+        if (floatNextBtn) floatNextBtn.addEventListener('click', scrollRight);
 
         // Track click to jump
         track.addEventListener('click', (e) => {
@@ -210,58 +259,94 @@
             container.scrollTo({ left: clickPos * maxScroll, behavior: 'smooth' });
         });
 
-        // Dragging the thumb
-        let isDragging = false;
-        let startX = 0;
-        let startScrollLeft = 0;
+        // Mouse Wheel: Translate vertical wheel scroll to horizontal scrolling when hovered
+        container.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                e.preventDefault();
+                container.scrollLeft += e.deltaY * 1.1;
+            }
+        }, { passive: false });
+
+        // Grab & Drag to scroll for container
+        let isContainerDragging = false;
+        let containerStartX = 0;
+        let containerScrollLeft = 0;
+
+        container.addEventListener('mousedown', (e) => {
+            isContainerDragging = true;
+            containerStartX = e.pageX - container.offsetLeft;
+            containerScrollLeft = container.scrollLeft;
+            container.style.scrollBehavior = 'auto';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isContainerDragging) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - containerStartX) * 1.4;
+            container.scrollLeft = containerScrollLeft - walk;
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isContainerDragging) {
+                isContainerDragging = false;
+                container.style.scrollBehavior = 'smooth';
+            }
+        });
+
+        // Dragging the thumb directly
+        let isThumbDragging = false;
+        let thumbStartX = 0;
+        let thumbStartScroll = 0;
 
         thumb.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.clientX;
-            startScrollLeft = container.scrollLeft;
+            e.stopPropagation();
+            isThumbDragging = true;
+            thumbStartX = e.clientX;
+            thumbStartScroll = container.scrollLeft;
             document.body.style.userSelect = 'none';
         });
 
         window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
+            if (!isThumbDragging) return;
             const trackRect = track.getBoundingClientRect();
-            const deltaX = e.clientX - startX;
+            const deltaX = e.clientX - thumbStartX;
             const maxScroll = container.scrollWidth - container.clientWidth;
             const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
             if (trackAvailableWidth > 0) {
                 const scrollRatio = maxScroll / trackAvailableWidth;
-                container.scrollLeft = startScrollLeft + deltaX * scrollRatio;
+                container.scrollLeft = thumbStartScroll + deltaX * scrollRatio;
             }
         });
 
         window.addEventListener('mouseup', () => {
-            if (isDragging) {
-                isDragging = false;
+            if (isThumbDragging) {
+                isThumbDragging = false;
                 document.body.style.userSelect = '';
             }
         });
 
         // Touch support for thumb
         thumb.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            startX = e.touches[0].clientX;
-            startScrollLeft = container.scrollLeft;
+            isThumbDragging = true;
+            thumbStartX = e.touches[0].clientX;
+            thumbStartScroll = container.scrollLeft;
         }, { passive: true });
 
         window.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
+            if (!isThumbDragging) return;
             const trackRect = track.getBoundingClientRect();
-            const deltaX = e.touches[0].clientX - startX;
+            const deltaX = e.touches[0].clientX - thumbStartX;
             const maxScroll = container.scrollWidth - container.clientWidth;
             const trackAvailableWidth = trackRect.width - thumb.offsetWidth;
             if (trackAvailableWidth > 0) {
                 const scrollRatio = maxScroll / trackAvailableWidth;
-                container.scrollLeft = startScrollLeft + deltaX * scrollRatio;
+                container.scrollLeft = thumbStartScroll + deltaX * scrollRatio;
             }
         }, { passive: true });
 
         window.addEventListener('touchend', () => {
-            isDragging = false;
+            isThumbDragging = false;
         });
     }
 
